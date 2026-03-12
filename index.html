@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>011 dos Pods | Elfbar & Lost Mary</title>
+<title>011 dos Pods | Elfbar, Lost Mary, Vaporesso & Mais</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -22,19 +22,23 @@
     <div class="logo">011 DOS PODS</div>
     <nav class="nav">
       <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#vantagens">Vantagens</a>
+      <a href="#produtos">Pods</a>
+      <a href="#vapes">Vapes</a>
+      <a href="#juices">Juices</a>
+      <a href="#frete">Frete</a>
+      <a href="#avaliacoes">Avaliações</a>
       <a href="#faq">FAQ</a>
-      <a href="#contato">Contato</a>
     </nav>
     <div class="menu-btn" onclick="toggleMenu()">☰</div>
   </div>
   <div class="mobile-nav" id="mobileNav">
     <a href="#inicio" onclick="toggleMenu()">Início</a>
-    <a href="#produtos" onclick="toggleMenu()">Produtos</a>
-    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#produtos" onclick="toggleMenu()">Pods</a>
+    <a href="#vapes" onclick="toggleMenu()">Vapes</a>
+    <a href="#juices" onclick="toggleMenu()">Juices</a>
+    <a href="#frete" onclick="toggleMenu()">Frete</a>
+    <a href="#avaliacoes" onclick="toggleMenu()">Avaliações</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
-    <a href="#contato" onclick="toggleMenu()">Contato</a>
   </div>
 </header>
 
@@ -42,8 +46,8 @@
 <section class="hero" id="inicio">
   <div class="hero-content">
     <span class="hero-badge">Loja Oficial</span>
-    <h1>Pods Premium<br><span class="highlight">Originais</span></h1>
-    <p>Elfbar • Lost Mary • Alta Performance<br>Entrega Rápida em Todo o Brasil</p>
+    <h1>Pods & Vapes<br><span class="highlight">Premium Originais</span></h1>
+    <p>Elfbar • Lost Mary • Vaporesso • Nasty • Ignite<br>Entrega Rápida em Todo o Brasil</p>
     <div class="hero-btns">
       <a href="#produtos" class="btn btn-primary">Ver Catálogo</a>
       <a href="https://wa.me/5511947871294" target="_blank" class="btn btn-outline">💬 WhatsApp</a>
@@ -70,10 +74,14 @@
       <img src="https://elfvapebrasil.com/wp-content/uploads/2024/11/Group-2293-1.png" alt="Qualidade Garantida">
       <span>Qualidade Garantida</span>
     </div>
+    <div class="badge-item">
+      <div class="pix-badge-icon">PIX</div>
+      <span>Pagamento PIX</span>
+    </div>
   </div>
 </section>
 
-<!-- Linha Elfbar 40K -->
+<!-- ===== PODS DESCARTÁVEIS ===== -->
 <section class="produtos" id="produtos">
   <div class="container">
     <div class="section-header">
@@ -87,7 +95,7 @@
         <p class="price-old">R$ 209,90</p>
         <p class="price">R$ 149,90</p>
         <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('Elfbar Ice King 40K')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Ice King 40K', 149.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-new">Lançamento</div>
@@ -96,7 +104,7 @@
         <p class="price-old">R$ 209,90</p>
         <p class="price">R$ 149,90</p>
         <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('ELFBAR Ice King 40K Summer Edition')">Comprar</button>
+        <button onclick="abrirCheckout('ELFBAR Ice King 40K Summer Edition', 149.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-29%</div>
@@ -105,7 +113,7 @@
         <p class="price-old">R$ 209,90</p>
         <p class="price">R$ 149,90</p>
         <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('Elfbar Nic King 40K')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Nic King 40K', 149.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-29%</div>
@@ -114,13 +122,13 @@
         <p class="price-old">R$ 209,90</p>
         <p class="price">R$ 149,90</p>
         <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('Elfbar Sour King 40K')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Sour King 40K', 149.90)">Comprar</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Destaques -->
+<!-- Destaques Elfbar -->
 <section class="produtos produtos-dark">
   <div class="container">
     <div class="section-header">
@@ -134,7 +142,7 @@
         <p class="price-old">R$ 129,90</p>
         <p class="price">R$ 99,90</p>
         <p class="price-pix">R$ 94,91 no Pix</p>
-        <button onclick="comprar('Elfbar BC10000')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar BC10000', 99.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-13%</div>
@@ -143,7 +151,7 @@
         <p class="price-old">R$ 189,90</p>
         <p class="price">R$ 164,90</p>
         <p class="price-pix">R$ 156,66 no Pix</p>
-        <button onclick="comprar('Elfbar BC45K Pro')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar BC45K Pro', 164.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-40%</div>
@@ -152,16 +160,16 @@
         <p class="price-old">R$ 199,90</p>
         <p class="price">R$ 119,90</p>
         <p class="price-pix">R$ 113,91 no Pix</p>
-        <button onclick="comprar('Elfbar GH 23K')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar GH 23K', 119.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-7%</div>
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TE 30K">
-        <h3>Elfbar TE 30K – 30000 Puffs – Pod Descartável Original</h3>
+        <h3>Elfbar TE 30K – 30000 Puffs</h3>
         <p class="price-old">R$ 139,90</p>
-        <p class="price">R$ 129,90</p>
-        <p class="price-pix">R$ 123,41 no Pix</p>
-        <button onclick="comprar('Elfbar TE 30K')">Comprar</button>
+        <p class="price">R$ 129,63</p>
+        <p class="price-pix">R$ 123,15 no Pix</p>
+        <button onclick="abrirCheckout('Elfbar TE 30K', 129.63)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-7%</div>
@@ -170,16 +178,16 @@
         <p class="price-old">R$ 139,90</p>
         <p class="price">R$ 129,90</p>
         <p class="price-pix">R$ 123,41 no Pix</p>
-        <button onclick="comprar('Elfbar TE 30K Black Gold')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar TE 30K Black Gold', 129.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-30%</div>
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TRIO 40K">
         <h3>Elfbar TRIO 40K – Pod Descartável</h3>
         <p class="price-old">R$ 219,90</p>
-        <p class="price">R$ 154,90</p>
-        <p class="price-pix">R$ 147,16 no Pix</p>
-        <button onclick="comprar('Elfbar TRIO 40K')">Comprar</button>
+        <p class="price">R$ 145,70</p>
+        <p class="price-pix">R$ 138,42 no Pix</p>
+        <button onclick="abrirCheckout('Elfbar TRIO 40K', 145.70)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-35%</div>
@@ -188,7 +196,7 @@
         <p class="price-old">R$ 199,90</p>
         <p class="price">R$ 129,90</p>
         <p class="price-pix">R$ 123,41 no Pix</p>
-        <button onclick="comprar('Lost Mary Mixer 30K')">Comprar</button>
+        <button onclick="abrirCheckout('Lost Mary Mixer 30K', 129.90)">Comprar</button>
       </div>
       <div class="card">
         <div class="badge-sale">-20%</div>
@@ -197,13 +205,13 @@
         <p class="price-old">R$ 99,90</p>
         <p class="price">R$ 79,90</p>
         <p class="price-pix">R$ 75,91 no Pix</p>
-        <button onclick="comprar('Nicotine Pouch Elfbar Tacja')">Comprar</button>
+        <button onclick="abrirCheckout('Nicotine Pouch Elfbar Tacja', 79.90)">Comprar</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Refil -->
+<!-- Refil Elfbar -->
 <section class="produtos">
   <div class="container">
     <div class="section-header">
@@ -215,42 +223,28 @@
         <h3>Elfbar EW16000 – Bateria Smart + Refil 16.000 Puffs</h3>
         <p class="price">R$ 199,90</p>
         <p class="price-pix">R$ 189,91 no Pix</p>
-        <button onclick="comprar('Elfbar EW16000 Bateria+Refil')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar EW16000 Bateria+Refil', 199.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar EW16000 Refil">
         <h3>Pod Elfbar EW16000 – Refil 16000 Puffs</h3>
         <p class="price">R$ 99,90</p>
         <p class="price-pix">R$ 94,91 no Pix</p>
-        <button onclick="comprar('Pod Elfbar EW16000 Refil')">Comprar</button>
+        <button onclick="abrirCheckout('Pod Elfbar EW16000 Refil', 99.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar E-Shisha Luxe 18K">
         <h3>Elfbar E-Shisha Luxe 18K – Pod DTL</h3>
         <p class="price">R$ 149,90</p>
         <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('Elfbar E-Shisha Luxe 18K')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar E-Shisha Luxe 18K', 149.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar EW9000">
-        <h3>Elfbar EW9000 – Bateria + 1 Refil 9.000 Puffs</h3>
-        <p class="price">R$ 149,90</p>
-        <p class="price-pix">R$ 142,41 no Pix</p>
-        <button onclick="comprar('Elfbar EW9000 Bateria+1 Refil')">Comprar</button>
-      </div>
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar EW9000 Refil">
-        <h3>Pod Elfbar EW9000 Refil 9000 Puffs</h3>
-        <p class="price">R$ 79,90</p>
-        <p class="price-pix">R$ 75,91 no Pix</p>
-        <button onclick="comprar('Pod Elfbar EW9000 Refil')">Comprar</button>
-      </div>
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar EW9000 Bateria+2 Refis">
         <h3>Elfbar EW9000 – Bateria + 2 Refis 9.000 Puffs</h3>
         <p class="price">R$ 199,90</p>
         <p class="price-pix">R$ 189,91 no Pix</p>
-        <button onclick="comprar('Elfbar EW9000 Bateria+2 Refis')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar EW9000 Bateria+2 Refis', 199.90)">Comprar</button>
       </div>
     </div>
   </div>
@@ -260,7 +254,7 @@
 <section class="produtos produtos-dark">
   <div class="container">
     <div class="section-header">
-      <h2>Linha Completa Elfbar Lost Mary</h2>
+      <h2>Linha Completa Lost Mary</h2>
     </div>
     <div class="grid">
       <div class="card">
@@ -270,38 +264,520 @@
         <p class="price-old">R$ 199,90</p>
         <p class="price">R$ 119,90</p>
         <p class="price-pix">R$ 113,91 no Pix</p>
-        <button onclick="comprar('Lost Mary MO10000')">Comprar</button>
+        <button onclick="abrirCheckout('Lost Mary MO10000', 119.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MT15000 Turbo">
         <h3>Lost Mary MT15000 Turbo – Pod Descartável</h3>
         <p class="price">R$ 129,90</p>
         <p class="price-pix">R$ 123,41 no Pix</p>
-        <button onclick="comprar('Lost Mary MT15000 Turbo')">Comprar</button>
+        <button onclick="abrirCheckout('Lost Mary MT15000 Turbo', 129.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO20000 Mega">
         <h3>Lost Mary MO20000 Mega – Pod Descartável</h3>
         <p class="price">R$ 154,90</p>
         <p class="price-pix">R$ 147,16 no Pix</p>
-        <button onclick="comprar('Lost Mary MO20000 Mega')">Comprar</button>
+        <button onclick="abrirCheckout('Lost Mary MO20000 Mega', 154.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary Losgal MC25000">
         <h3>Lost Mary Losgal MC25000 – Pod Descartável</h3>
         <p class="price">R$ 164,90</p>
         <p class="price-pix">R$ 156,66 no Pix</p>
-        <button onclick="comprar('Lost Mary Losgal MC25000')">Comprar</button>
+        <button onclick="abrirCheckout('Lost Mary Losgal MC25000', 164.90)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MT35000">
+        <h3>Lost Mary MT35000 – 35000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 130,66</p>
+        <p class="price-pix">R$ 124,13 no Pix</p>
+        <button onclick="abrirCheckout('Lost Mary MT35000', 130.66)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO5000">
+        <h3>Lost Mary MO5000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 79,90</p>
+        <p class="price-pix">R$ 75,91 no Pix</p>
+        <button onclick="abrirCheckout('Lost Mary MO5000', 79.90)">Comprar</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Líquidos -->
+<!-- Ignite & Outras Marcas -->
 <section class="produtos">
   <div class="container">
     <div class="section-header">
-      <h2>Líquidos Elfbar</h2>
+      <h2>Ignite & Outras Marcas | Pod Descartável</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Ignite V55 Ultra Thin">
+        <h3>Ignite V55 Ultra Thin – 5500 Puffs</h3>
+        <p class="price">R$ 88,36</p>
+        <p class="price-pix">R$ 83,94 no Pix</p>
+        <button onclick="abrirCheckout('Ignite V55 Ultra Thin 5500 Puffs', 88.36)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Ignite V155 Ultra Slim">
+        <h3>Ignite V155 Ultra Slim – 15500 Puffs</h3>
+        <p class="price">R$ 124,08</p>
+        <p class="price-pix">R$ 117,88 no Pix</p>
+        <button onclick="abrirCheckout('Ignite V155 Ultra Slim 15500 Puffs', 124.08)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Ignite V250 25000 Puffs">
+        <h3>Ignite V250 – 25000 Puffs</h3>
+        <p class="price">R$ 125,02</p>
+        <p class="price-pix">R$ 118,77 no Pix</p>
+        <button onclick="abrirCheckout('Ignite V250 25000 Puffs', 125.02)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Ignite V-Nano">
+        <h3>Ignite V-Nano – Pod Descartável</h3>
+        <p class="price">R$ 46,06</p>
+        <p class="price-pix">R$ 43,76 no Pix</p>
+        <button onclick="abrirCheckout('Ignite V-Nano', 46.06)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar BC15K">
+        <h3>Elfbar BC15K – 15000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 111,86</p>
+        <p class="price-pix">R$ 106,27 no Pix</p>
+        <button onclick="abrirCheckout('Elfbar BC15K 15000 Puffs', 111.86)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Geek Bar Z35">
+        <h3>Geek Bar Z35 – 35000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 130,66</p>
+        <p class="price-pix">R$ 124,13 no Pix</p>
+        <button onclick="abrirCheckout('Geek Bar Z35 35000 Puffs', 130.66)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Black Sheep 30K Dual Tank">
+        <h3>Black Sheep 30K Dual Tank – 30000 Puffs</h3>
+        <p class="price">R$ 142,88</p>
+        <p class="price-pix">R$ 135,74 no Pix</p>
+        <button onclick="abrirCheckout('Black Sheep 30K Dual Tank', 142.88)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK x Just Juice Ice 45K">
+        <h3>BLVK x Just Juice Ice & Nic Control 45K – 45000 Puffs</h3>
+        <p class="price">R$ 148,99</p>
+        <p class="price-pix">R$ 141,54 no Pix</p>
+        <button onclick="abrirCheckout('BLVK x Just Juice 45K', 148.99)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VAPES ===== -->
+<section class="produtos produtos-dark" id="vapes">
+  <div class="container">
+    <div class="section-header">
+      <h2>VAPORESSO | Pod System & Vape Mod</h2>
+      <p>Produtos exclusivos da fabricante responsável pela linha XROS e GTX</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Xros 5 Mini Vaporesso">
+        <h3>Pod System Xros 5 Mini | Vaporesso</h3>
+        <p class="price">R$ 277,30</p>
+        <p class="price-pix">R$ 263,44 no Pix</p>
+        <p class="parcela">ou 3x de R$ 98,33 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Xros 5 Mini | Vaporesso', 277.30)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Xros 5 Vaporesso">
+        <h3>Pod System Xros 5 | Vaporesso</h3>
+        <p class="price">R$ 318,66</p>
+        <p class="price-pix">R$ 302,73 no Pix</p>
+        <p class="parcela">ou 3x de R$ 113,00 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Xros 5 | Vaporesso', 318.66)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Luxe X2 Vaporesso">
+        <h3>Pod System Luxe X2 | Vaporesso</h3>
+        <p class="price">R$ 318,66</p>
+        <p class="price-pix">R$ 302,73 no Pix</p>
+        <p class="parcela">ou 3x de R$ 113,00 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Luxe X2 | Vaporesso', 318.66)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-new">Novidade</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Xros Pro 2 Vaporesso">
+        <h3>Pod System Xros Pro 2 | Vaporesso</h3>
+        <p class="price">R$ 340,28</p>
+        <p class="price-pix">R$ 323,27 no Pix</p>
+        <p class="parcela">ou 3x de R$ 120,67 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Xros Pro 2 | Vaporesso', 340.28)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Eco Nano Plus Vaporesso">
+        <h3>Pod System Eco Nano Plus | Vaporesso</h3>
+        <p class="price">R$ 205,86</p>
+        <p class="price-pix">R$ 195,57 no Pix</p>
+        <p class="parcela">ou 3x de R$ 73,00 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Eco Nano Plus | Vaporesso', 205.86)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Gen SE Vaporesso">
+        <h3>Vape Gen SE | Vaporesso</h3>
+        <p class="price">R$ 578,10</p>
+        <p class="price-pix">R$ 549,20 no Pix</p>
+        <p class="parcela">ou 3x de R$ 205,00 sem juros</p>
+        <button onclick="abrirCheckout('Vape Gen SE | Vaporesso', 578.10)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Gen Max Vaporesso">
+        <h3>Vape Gen Max | Vaporesso</h3>
+        <p class="price">R$ 624,16</p>
+        <p class="price-pix">R$ 592,95 no Pix</p>
+        <p class="parcela">ou 3x de R$ 221,33 sem juros</p>
+        <button onclick="abrirCheckout('Vape Gen Max | Vaporesso', 624.16)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-new">Novidade</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Mod Armour Max Vaporesso">
+        <h3>Vape Mod Armour Max (iTank T) | Vaporesso</h3>
+        <p class="price">R$ 652,36</p>
+        <p class="price-pix">R$ 619,74 no Pix</p>
+        <p class="parcela">ou 3x de R$ 231,33 sem juros</p>
+        <button onclick="abrirCheckout('Vape Mod Armour Max | Vaporesso', 652.36)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seleção de Vapes Outras Marcas -->
+<section class="produtos">
+  <div class="container">
+    <div class="section-header">
+      <h2>Seleção de Vapes | Pod System & Box Mod</h2>
+      <p>Pod system para + nicotina e vape mods para + vapor</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Argus G3 Voopoo">
+        <h3>Pod System Argus G3 | Voopoo</h3>
+        <p class="price">R$ 343,10</p>
+        <p class="price-pix">R$ 325,95 no Pix</p>
+        <p class="parcela">ou 3x de R$ 121,67 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Argus G3 | Voopoo', 343.10)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-7%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Xros Pro Vaporesso">
+        <h3>Pod System Xros Pro | Vaporesso</h3>
+        <p class="price-old">R$ 367,00</p>
+        <p class="price">R$ 321,48</p>
+        <p class="price-pix">R$ 305,41 no Pix</p>
+        <p class="parcela">ou 3x de R$ 114,00 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Xros Pro | Vaporesso', 321.48)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-13%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Kit Pod System Xlim SQ Pro OXVA">
+        <h3>Kit Pod System Xlim SQ Pro + Juice | OXVA x BLVK</h3>
+        <p class="price-old">R$ 318,50</p>
+        <p class="price">R$ 260,85</p>
+        <p class="price-pix">R$ 247,81 no Pix</p>
+        <p class="parcela">ou 3x de R$ 92,50 sem juros</p>
+        <button onclick="abrirCheckout('Kit Pod System Xlim SQ Pro | OXVA x BLVK', 260.85)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-5%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod System Caliburn GK3 Uwell">
+        <h3>Pod System Caliburn GK3 | Uwell</h3>
+        <p class="price-old">R$ 295,00</p>
+        <p class="price">R$ 262,26</p>
+        <p class="price-pix">R$ 249,15 no Pix</p>
+        <p class="parcela">ou 3x de R$ 93,00 sem juros</p>
+        <button onclick="abrirCheckout('Pod System Caliburn GK3 | Uwell', 262.26)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Mod Grus 100W Lost Vape">
+        <h3>Vape Mod Grus 100W | Lost Vape</h3>
+        <p class="price">R$ 485,04</p>
+        <p class="price-pix">R$ 460,79 no Pix</p>
+        <p class="parcela">ou 3x de R$ 172,00 sem juros</p>
+        <button onclick="abrirCheckout('Vape Mod Grus 100W | Lost Vape', 485.04)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Mod Cyborg Quest 100W Lost Vape">
+        <h3>Vape Mod Cyborg Quest 100W | Lost Vape</h3>
+        <p class="price">R$ 448,38</p>
+        <p class="price-pix">R$ 425,96 no Pix</p>
+        <p class="parcela">ou 3x de R$ 159,00 sem juros</p>
+        <button onclick="abrirCheckout('Vape Mod Cyborg Quest 100W | Lost Vape', 448.38)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-new">Novidade</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vape Mod Armour Ultra 100W Vaporesso">
+        <h3>Vape Mod Armour Ultra (100W) | Vaporesso</h3>
+        <p class="price">R$ 666,46</p>
+        <p class="price-pix">R$ 633,14 no Pix</p>
+        <p class="parcela">ou 3x de R$ 236,33 sem juros</p>
+        <button onclick="abrirCheckout('Vape Mod Armour Ultra 100W | Vaporesso', 666.46)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Mod Hyperion DNA 100C Lost Vape">
+        <h3>Mod Hyperion DNA 100C | Lost Vape</h3>
+        <p class="price">R$ 1.212,60</p>
+        <p class="price-pix">R$ 1.151,97 no Pix</p>
+        <p class="parcela">ou 3x de R$ 430,00 sem juros</p>
+        <button onclick="abrirCheckout('Mod Hyperion DNA 100C | Lost Vape', 1212.60)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vaporizadores de Ervas -->
+<section class="produtos produtos-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2>Vaporizador de Ervas | 100% Originais</h2>
+      <p>Somente aquecedores de ervas 100% originais para maior desempenho</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador de Ervas DynaVap M7">
+        <h3>Vaporizador de Ervas The M 7 (TwoToniuM) | DynaVap</h3>
+        <p class="price">R$ 581,86</p>
+        <p class="price-pix">R$ 552,77 no Pix</p>
+        <p class="parcela">ou 3x de R$ 206,33 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador DynaVap The M 7', 581.86)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-9%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Rush Weecke">
+        <h3>Vaporizador de Ervas Rush | Weecke</h3>
+        <p class="price-old">R$ 667,00</p>
+        <p class="price">R$ 572,46</p>
+        <p class="price-pix">R$ 543,84 no Pix</p>
+        <p class="parcela">ou 3x de R$ 203,00 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Rush | Weecke', 572.46)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-6%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Fenix Mini FENiX">
+        <h3>Vaporizador de Ervas Fenix Mini | FENiX</h3>
+        <p class="price-old">R$ 637,00</p>
+        <p class="price">R$ 563,06</p>
+        <p class="price-pix">R$ 534,91 no Pix</p>
+        <p class="parcela">ou 3x de R$ 199,67 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Fenix Mini | FENiX', 563.06)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-5%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Fenix Pro FENiX">
+        <h3>Vaporizador de Ervas Fenix Pro | FENiX</h3>
+        <p class="price-old">R$ 779,00</p>
+        <p class="price">R$ 694,66</p>
+        <p class="price-pix">R$ 659,93 no Pix</p>
+        <p class="parcela">ou 3x de R$ 246,33 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Fenix Pro | FENiX', 694.66)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-7%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador XS GO AirVape">
+        <h3>Vaporizador de Ervas XS GO | AirVape</h3>
+        <p class="price-old">R$ 699,00</p>
+        <p class="price">R$ 610,06</p>
+        <p class="price-pix">R$ 579,56 no Pix</p>
+        <p class="parcela">ou 3x de R$ 216,33 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador XS GO | AirVape', 610.06)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Fenix 2.0 FENiX">
+        <h3>Vaporizador de Ervas Fenix 2.0 | FENiX</h3>
+        <p class="price">R$ 1.221,06</p>
+        <p class="price-pix">R$ 1.160,01 no Pix</p>
+        <p class="parcela">ou 3x de R$ 433,00 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Fenix 2.0 | FENiX', 1221.06)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-10%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Mighty Storz Bickel">
+        <h3>Vaporizador de Ervas Mighty | Storz &amp; Bickel</h3>
+        <p class="price-old">R$ 3.899,00</p>
+        <p class="price">R$ 3.289,06</p>
+        <p class="price-pix">R$ 3.124,61 no Pix</p>
+        <p class="parcela">ou 3x de R$ 1.166,33 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Mighty | Storz & Bickel', 3289.06)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Vaporizador Solo 3 Arizer">
+        <h3>Vaporizador de Ervas Solo 3 | Arizer</h3>
+        <p class="price">R$ 2.958,18</p>
+        <p class="price-pix">R$ 2.810,27 no Pix</p>
+        <p class="parcela">ou 3x de R$ 1.049,00 sem juros</p>
+        <button onclick="abrirCheckout('Vaporizador Solo 3 | Arizer', 2958.18)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== JUICES ===== -->
+<section class="produtos" id="juices">
+  <div class="container">
+    <div class="section-header">
+      <h2>NASTY | Juice Nic Salt</h2>
+      <p>Juice nic salt e juice free base com alto sabor e qualidade impecável</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Mango Peach Smooth">
+        <h3>Juice Nic Salt Mango Peach - Smooth | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Mango Peach Smooth | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Mango Lassi Smooth">
+        <h3>Juice Nic Salt Mango Lassi - Smooth | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Mango Lassi Smooth | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Cubano Smooth">
+        <h3>Juice Nic Salt Cubano - Smooth | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Cubano Smooth | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Peach Ice Smooth">
+        <h3>Juice Nic Salt Peach Ice - Smooth | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Peach Ice Smooth | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Strawberry Ice Super Cool">
+        <h3>Juice Nic Salt Strawberry Ice - Super Cool | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Strawberry Ice Super Cool | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Watermelon Ice Super Cool">
+        <h3>Juice Nic Salt Watermelon Ice - Super Cool | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Watermelon Ice Super Cool | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Guava Ice Super Cool">
+        <h3>Juice Nic Salt Guava Ice - Super Cool | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Guava Ice Super Cool | Nasty', 97.20)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nasty Peach Ice Super Cool">
+        <h3>Juice Nic Salt Peach Ice - Super Cool | Nasty</h3>
+        <p class="price">R$ 97,20</p>
+        <p class="price-pix">R$ 92,34 no Pix</p>
+        <p class="parcela">ou 2x de R$ 51,70 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Peach Ice Super Cool | Nasty', 97.20)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Juice Nic Salt / Free Base Outras Marcas -->
+<section class="produtos produtos-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2>Juice Nic Salt &amp; Free Base | Outras Marcas</h2>
+      <p>Seleção em variedade de líquidos VG 50/PG 50 e VG 70/PG 30</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK Double Kiwi Ice">
+        <h3>Juice Nic Salt Double Kiwi Ice | BLVK Unicorn x Just Juice</h3>
+        <p class="price">R$ 105,28</p>
+        <p class="price-pix">R$ 100,02 no Pix</p>
+        <p class="parcela">ou 2x de R$ 56,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Double Kiwi Ice | BLVK', 105.28)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK Dragonfruit Raspberry Ice">
+        <h3>Juice Nic Salt Dragonfruit Raspberry Ice | BLVK x Just Juice</h3>
+        <p class="price">R$ 105,28</p>
+        <p class="price-pix">R$ 100,02 no Pix</p>
+        <p class="parcela">ou 2x de R$ 56,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Dragonfruit Raspberry Ice | BLVK', 105.28)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK Grape Ice">
+        <h3>Juice Nic Salt Grape Ice | BLVK Unicorn x Just Juice</h3>
+        <p class="price">R$ 105,28</p>
+        <p class="price-pix">R$ 100,02 no Pix</p>
+        <p class="parcela">ou 2x de R$ 56,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Grape Ice | BLVK', 105.28)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK Kiwi Passion Ice">
+        <h3>Juice Nic Salt Kiwi Passion Ice | BLVK Unicorn x Just Juice</h3>
+        <p class="price">R$ 105,28</p>
+        <p class="price-pix">R$ 100,02 no Pix</p>
+        <p class="parcela">ou 2x de R$ 56,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Kiwi Passion Ice | BLVK', 105.28)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="LQD Art Pink Cherry Lemonade Nic Salt">
+        <h3>Juice Nic Salt Pink Cherry Lemonade Ice - Fusion Art | LQD Art</h3>
+        <p class="price">R$ 39,48</p>
+        <p class="price-pix">R$ 37,51 no Pix</p>
+        <p class="parcela">ou 1x de R$ 42,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Pink Cherry Lemonade | LQD Art', 39.48)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="LQD Art Pinacomango Nic Salt">
+        <h3>Juice Nic Salt Pinacomango - Fusion Art | LQD Art</h3>
+        <p class="price">R$ 39,48</p>
+        <p class="price-pix">R$ 37,51 no Pix</p>
+        <p class="parcela">ou 1x de R$ 42,00 sem juros</p>
+        <button onclick="abrirCheckout('Juice Nic Salt Pinacomango | LQD Art', 39.48)">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-24%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="BLVK Citrus Strawberry Ice Free Base">
+        <h3>Juice Citrus Strawberry Ice - Fusion | BLVK Unicorn</h3>
+        <p class="price-old">R$ 125,00</p>
+        <p class="price">R$ 89,30</p>
+        <p class="price-pix">R$ 84,84 no Pix</p>
+        <p class="parcela">ou 2x de R$ 47,50 sem juros</p>
+        <button onclick="abrirCheckout('Juice Citrus Strawberry Ice | BLVK Unicorn', 89.30)">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Zomo Spearmint Free Base">
+        <h3>Juice Spear Mint - Mint | Zomo</h3>
+        <p class="price">R$ 54,05</p>
+        <p class="price-pix">R$ 51,35 no Pix</p>
+        <p class="parcela">ou 1x de R$ 57,50 sem juros</p>
+        <button onclick="abrirCheckout('Juice Spear Mint | Zomo', 54.05)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Líquidos Elfbar ELFLIQ -->
+<section class="produtos">
+  <div class="container">
+    <div class="section-header">
+      <h2>Líquidos Elfbar ELFLIQ</h2>
     </div>
     <div class="grid grid-4">
       <div class="card">
@@ -309,67 +785,93 @@
         <h3>Elfbar Juice Apple Peach 30ml/35mg – ELFLIQ</h3>
         <p class="price">R$ 49,90</p>
         <p class="price-pix">R$ 47,41 no Pix</p>
-        <button onclick="comprar('Elfbar Juice Apple Peach')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Juice Apple Peach ELFLIQ', 49.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Spearmint">
         <h3>Elfbar Juice Spearmint 30ml/35mg – ELFLIQ</h3>
         <p class="price">R$ 49,90</p>
         <p class="price-pix">R$ 47,41 no Pix</p>
-        <button onclick="comprar('Elfbar Juice Spearmint')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Juice Spearmint ELFLIQ', 49.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Strawberry Snoow">
         <h3>Elfbar Juice Strawberry Snoow 30ml/35mg – ELFLIQ</h3>
         <p class="price">R$ 49,90</p>
         <p class="price-pix">R$ 47,41 no Pix</p>
-        <button onclick="comprar('Elfbar Juice Strawberry Snoow')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Juice Strawberry Snoow ELFLIQ', 49.90)">Comprar</button>
       </div>
       <div class="card">
         <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Watermelon Ice">
         <h3>Elfbar Juice Watermelon Ice 30ml/35mg – ELFLIQ</h3>
         <p class="price">R$ 49,90</p>
         <p class="price-pix">R$ 47,41 no Pix</p>
-        <button onclick="comprar('Elfbar Juice Watermelon Ice')">Comprar</button>
+        <button onclick="abrirCheckout('Elfbar Juice Watermelon Ice ELFLIQ', 49.90)">Comprar</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Mais Visualizados -->
-<section class="produtos produtos-dark">
+<!-- ===== FRETE ===== -->
+<section class="frete-section" id="frete">
   <div class="container">
     <div class="section-header">
-      <h2>Pod Descartáveis Mais Visualizados</h2>
+      <h2>Calcule o Frete</h2>
+      <p>Informe seu CEP e veja as opções de entrega disponíveis para sua região</p>
     </div>
-    <div class="grid grid-4">
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar BC10000">
-        <h3>Elfbar BC10000 Puffs – Pod Descartável</h3>
-        <p class="price">R$ 99,90</p>
-        <p class="price-pix">R$ 94,91 no Pix</p>
-        <button onclick="comprar('Elfbar BC10000 Puffs')">Comprar</button>
+    <div class="frete-box">
+      <div class="frete-input-row">
+        <input type="text" id="cepInput" placeholder="Digite seu CEP (ex: 01310-100)" maxlength="9" oninput="formatarCep(this)">
+        <button onclick="calcularFrete()">Calcular</button>
       </div>
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO5000">
-        <h3>Lost Mary MO5000 Puffs – Pod Descartável</h3>
-        <p class="price">R$ 79,90</p>
-        <p class="price-pix">R$ 75,91 no Pix</p>
-        <button onclick="comprar('Lost Mary MO5000')">Comprar</button>
+      <div id="freteResultado" class="frete-resultado"></div>
+      <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" class="nao-sei-cep">Não sei meu CEP</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVALIAÇÕES ===== -->
+<section class="avaliacoes" id="avaliacoes">
+  <div class="container">
+    <div class="section-header">
+      <h2>O Que Estão Falando da Gente</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Sem palavras! Muito rápido a entrega e recomendo para todos que procuram qualidade e confiança. Melhor loja que já conheci. Para quem estiver com dúvidas, pode comprar que é garantido!"</p>
+        <span class="review-author">– Lucas Souza</span>
+        <span class="review-product">Pod Descartável 10000 puffs</span>
       </div>
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TE5000">
-        <h3>Elfbar TE5000 Puffs – Pod Descartável</h3>
-        <p class="price">R$ 79,90</p>
-        <p class="price-pix">R$ 75,91 no Pix</p>
-        <button onclick="comprar('Elfbar TE5000')">Comprar</button>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Gostei do sabor e o pod tem um design bonito. Dura bastante. Produto de qualidade!"</p>
+        <span class="review-author">– Rosa Amelia</span>
+        <span class="review-product">Pod Descartável Ignite V80</span>
       </div>
-      <div class="card">
-        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar Lowit 5500">
-        <h3>Pod Elfbar Lowit 5500 Puffs – Refil</h3>
-        <p class="price">R$ 59,90</p>
-        <p class="price-pix">R$ 56,91 no Pix</p>
-        <button onclick="comprar('Pod Elfbar Lowit 5500')">Comprar</button>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Amei o produto. O adocicado é maravilhoso não enjoativo. Excelente produto e a loja muito confiável, organizada e rápida na entrega."</p>
+        <span class="review-author">– Igor de Carvalho</span>
+        <span class="review-product">Pod Descartável SK 10000 puffs</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Simplesmente perfeito o site, muito confiável, podem comprar sem medo!"</p>
+        <span class="review-author">– Erike Azevedo</span>
+        <span class="review-product">Pod Descartável 10000 puffs</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Adorei este Pod! Excelente qualidade e um sabor maravilhoso."</p>
+        <span class="review-author">– Cliente Verificado</span>
+        <span class="review-product">Elfbar TI7000</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+        <p>"Produto original e entrega rápida! Qualidade absurda, recomendo. Atendimento excelente no WhatsApp."</p>
+        <span class="review-author">– Cliente Verificado</span>
+        <span class="review-product">Elfbar Premium</span>
       </div>
     </div>
   </div>
@@ -380,38 +882,38 @@
   <div class="container">
     <div class="section-header">
       <h2>Por que escolher a 011 dos Pods?</h2>
-      <p>Se você quer parar de fumar ou está começando uma jornada sem tabaco, nossos produtos garantem qualidade e autenticidade, sem conter tabaco para uma experiência mais segura.</p>
+      <p>Se você quer parar de fumar ou está começando uma jornada sem tabaco, nossos produtos garantem qualidade e autenticidade.</p>
     </div>
     <div class="vantagens-grid">
       <div class="vantagem-item">
         <div class="vantagem-icon">🌿</div>
         <h3>Sem Fumaça Passiva</h3>
-        <p>Ao produzir vapor em vez de fumaça, nossos produtos são livres de subprodutos perigosos da combustão, protegendo você e o ambiente.</p>
+        <p>Vapor em vez de fumaça, livre de subprodutos perigosos da combustão, protegendo você e o ambiente.</p>
       </div>
       <div class="vantagem-item">
         <div class="vantagem-icon">🎯</div>
         <h3>Controle de Nicotina</h3>
-        <p>Tenha total controle sob o teor de nicotina utilizado. Variedade de sabores: frutas, tabaco, bebidas, sobremesas, mentolados.</p>
+        <p>Tenha total controle sob o teor de nicotina. Variedade de sabores: frutas, tabaco, bebidas, sobremesas, mentolados.</p>
       </div>
       <div class="vantagem-item">
         <div class="vantagem-icon">✅</div>
         <h3>Apenas 4 Compostos</h3>
-        <p>Apenas 4 compostos, comparados às mais de 4.000 substâncias tóxicas do cigarro tradicional.</p>
+        <p>Comparados às mais de 4.000 substâncias tóxicas do cigarro tradicional.</p>
       </div>
       <div class="vantagem-item">
         <div class="vantagem-icon">📱</div>
         <h3>Fácil de Usar</h3>
-        <p>Operação simples, sem necessidade de conhecimento prévio, ideais tanto para iniciantes quanto para veteranos.</p>
+        <p>Sem necessidade de conhecimento prévio, ideais tanto para iniciantes quanto para veteranos.</p>
       </div>
       <div class="vantagem-item">
         <div class="vantagem-icon">🚀</div>
         <h3>Dispositivos Portáteis</h3>
-        <p>Dispositivos portáteis sempre prontos para uso. Descartáveis, sem necessidade de recarga ou limpeza.</p>
+        <p>Sempre prontos para uso. Descartáveis, sem necessidade de recarga ou limpeza.</p>
       </div>
       <div class="vantagem-item">
         <div class="vantagem-icon">🏆</div>
         <h3>Marca Líder Mundial</h3>
-        <p>O Elf Bar é líder mundial em cigarros eletrônicos desde 2018, com experiência intensa, aromática e saborosa.</p>
+        <p>Elf Bar é líder mundial em cigarros eletrônicos desde 2018, com experiência intensa, aromática e saborosa.</p>
       </div>
     </div>
   </div>
@@ -433,7 +935,7 @@
           <p>👉 Apenas 4 compostos, comparados às mais de 4.000 substâncias tóxicas do cigarro tradicional.</p>
           <p>👉 Dispositivos portáteis sempre prontos para uso.</p>
           <p>👉 Operação simples, sem necessidade de conhecimento prévio, ideais tanto para iniciantes quanto para veteranos.</p>
-          <p>👉 Variedade de Elfbar sabores (frutas, tabaco, bebidas, sobremesas, mentolados).</p>
+          <p>👉 Variedade de sabores (frutas, tabaco, bebidas, sobremesas, mentolados).</p>
           <p>👉 Tenha total controle sob o teor de nicotina utilizado.</p>
         </div>
       </div>
@@ -443,8 +945,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>O tempo de duração de um pod de 5000 puffs varia de acordo com o hábito de uso individual e a quantidade de nicotina consumida. Por exemplo, um pod com 20mg/ml de nicotina e 600 puffs equivale a cerca de 20 cigarros. O ritmo de consumo varia entre os usuários, podendo algumas pessoas consumirem 20 cigarros em um dia, enquanto outras podem levar uma semana inteira para atingir essa quantidade.</p>
-          <p>No caso do Elf Bar Lost Mary MO5000, que tem uma concentração de nicotina mais alta, de 50mg/ml, isso significa que você pode satisfazer sua necessidade de nicotina com menos puffs diários. Se você fuma cerca de 20 cigarros por semana, esse pod descartável pode durar mais de 4 semanas.</p>
+          <p>O tempo de duração de um pod de 5000 puffs varia de acordo com o hábito de uso individual. Por exemplo, um pod com 20mg/ml de nicotina e 600 puffs equivale a cerca de 20 cigarros. No caso do Elf Bar Lost Mary MO5000 com 50mg/ml, se você fuma cerca de 20 cigarros por semana, esse pod pode durar mais de 4 semanas.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -453,7 +954,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Para saber se o Elfbar está carregado, geralmente os dispositivos vêm com indicadores de bateria que podem ser visualizados no próprio dispositivo. Esses indicadores podem ser luzes LED que indicam o nível de carga da bateria.</p>
+          <p>Os dispositivos vêm com indicadores de bateria com luzes LED que indicam o nível de carga da bateria.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -462,7 +963,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>É necessário conectar o dispositivo a uma fonte de energia usando um cabo USB tipo C. O processo de carregamento pode variar entre 40 e 100 minutos dependendo do modelo.</p>
+          <p>Conecte o dispositivo a uma fonte de energia usando um cabo USB tipo C. O processo de carregamento pode variar entre 40 e 100 minutos dependendo do modelo.</p>
         </div>
       </div>
       <div class="faq-item">
@@ -471,18 +972,25 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Há um código QR na embalagem do produto que pode ser escaneado e verificado no site do fabricante. Os dispositivos mais buscados são Elfbar 5000, Elfbar 4000 e Elfbar 10000. Esses tiveram uma grande popularidade não apenas no Brasil como em todo o mundo. Todos os produtos da 011 dos Pods são 100% originais e verificáveis.</p>
+          <p>Há um código QR na embalagem do produto que pode ser escaneado e verificado no site do fabricante. Todos os produtos da 011 dos Pods são 100% originais e verificáveis.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          Descubra os cigarros eletrônicos Elf Bar e Lost Mary
+          O pagamento via PIX tem desconto?
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <p>Descubra os cigarros eletrônicos Elf bar, Lost Mary, Funky Republic e Funky Lands, oferecendo simplicidade, satisfação e opções de nicotina personalizadas para uma experiência única.</p>
-          <p>Descartáveis, fáceis de usar e ambientalmente amigáveis, sem necessidade de recarga ou limpeza, garantindo uma experiência vaping sem fumaça ou resíduos desagradáveis.</p>
-          <p>O pod Elf Bar é conhecido por proporcionar uma experiência intensa, aromática e saborosa desde que a marca foi fundada em 2018, tornando-se rapidamente líder mundial em cigarros eletrônicos e líquidos.</p>
+          <p>Sim! Pagamentos via PIX têm desconto de 5% sobre o valor total do pedido. O desconto é aplicado automaticamente e a confirmação é instantânea.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Qual o prazo de entrega?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Os prazos variam de acordo com a região. Para São Paulo capital: 1–2 dias úteis. Grande SP e interior SP: 2–3 dias. Sul e Sudeste: 3–5 dias. Centro-Oeste e Nordeste: 5–8 dias. Norte: 7–12 dias. Todos os pedidos são enviados com código de rastreamento.</p>
         </div>
       </div>
     </div>
@@ -494,7 +1002,7 @@
   <div class="container">
     <div class="newsletter-content">
       <h2>CADASTRE-SE NA NEWSLETTER</h2>
-      <p>e receba novidades e promoções</p>
+      <p>e receba novidades e promoções exclusivas</p>
       <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
         <input type="email" placeholder="Seu melhor e-mail" required>
         <button type="submit">Cadastrar</button>
@@ -509,33 +1017,39 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h4 class="footer-logo">011 DOS PODS</h4>
-        <p>Loja especializada em pods descartáveis originais. Elfbar, Lost Mary e muito mais.</p>
+        <p>Loja especializada em pods descartáveis, vapes e juices originais. Elfbar, Lost Mary, Vaporesso, Nasty e muito mais.</p>
         <a href="https://wa.me/5511947871294" target="_blank" class="whatsapp-link">💬 (11) 94787-1294</a>
       </div>
       <div class="footer-col">
         <h4>Institucional</h4>
         <ul>
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#produtos">Pods Descartáveis</a></li>
+          <li><a href="#vapes">Vapes & Pod Systems</a></li>
+          <li><a href="#juices">Juices & Líquidos</a></li>
           <li><a href="#vantagens">Vantagens</a></li>
-          <li><a href="#faq">Perguntas Frequentes</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Suporte</h4>
         <ul>
           <li><a href="https://wa.me/5511947871294" target="_blank">WhatsApp</a></li>
+          <li><a href="#frete">Calcular Frete</a></li>
           <li><a href="#faq">Dúvidas Frequentes</a></li>
           <li><a href="#contato">Newsletter</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Categorias</h4>
+        <h4>Marcas</h4>
         <ul>
-          <li><a href="#produtos">Elfbar 40K</a></li>
+          <li><a href="#produtos">Elfbar</a></li>
           <li><a href="#produtos">Lost Mary</a></li>
-          <li><a href="#produtos">Refil Pods</a></li>
-          <li><a href="#produtos">Líquidos ELFLIQ</a></li>
+          <li><a href="#vapes">Vaporesso</a></li>
+          <li><a href="#vapes">Voopoo</a></li>
+          <li><a href="#juices">Nasty</a></li>
+          <li><a href="#juices">BLVK Unicorn</a></li>
+          <li><a href="#produtos">Ignite</a></li>
         </ul>
       </div>
     </div>
@@ -548,6 +1062,46 @@
 
 <!-- WhatsApp Floating Button -->
 <a class="whatsapp-float" href="https://wa.me/5511947871294?text=Olá%2C+gostaria+de+saber+mais+sobre+os+produtos." target="_blank">💬</a>
+
+<!-- ===== MODAL DE CHECKOUT (PIX) ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="fecharModal()"></div>
+<div class="modal-checkout" id="modalCheckout">
+  <button class="modal-close" onclick="fecharModal()">✕</button>
+  <h2 class="modal-titulo">Finalizar Pedido</h2>
+  <div class="modal-produto" id="modalProdutoNome"></div>
+
+  <div class="modal-section">
+    <h3>Calcule o Frete</h3>
+    <div class="frete-input-row">
+      <input type="text" id="cepModal" placeholder="Digite seu CEP" maxlength="9" oninput="formatarCep(this)">
+      <button onclick="calcularFreteModal()">Calcular</button>
+    </div>
+    <div id="freteModalResultado" class="frete-resultado"></div>
+  </div>
+
+  <div class="modal-section pix-section">
+    <h3>Pagamento via PIX</h3>
+    <p class="pix-desconto">✅ 5% de desconto pagando com PIX!</p>
+    <div class="pix-total" id="pixTotal"></div>
+    <div class="pix-key-box">
+      <p>Chave PIX:</p>
+      <div class="pix-key-row">
+        <span id="pixKeyText">+55 (11) 94787-1294</span>
+        <button onclick="copiarPix()" class="btn-copiar">Copiar</button>
+      </div>
+    </div>
+    <div class="pix-instrucoes">
+      <p>1. Abra o app do seu banco</p>
+      <p>2. Vá em Pix → Pagar → Copia e Cola ou Chave</p>
+      <p>3. Cole a chave acima e confirme o valor</p>
+      <p>4. Envie o comprovante pelo WhatsApp: <a href="https://wa.me/5511947871294" target="_blank">(11) 94787-1294</a></p>
+    </div>
+  </div>
+
+  <a id="modalWhatsapp" href="#" target="_blank" class="btn btn-primary btn-block">
+    💬 Confirmar pelo WhatsApp
+  </a>
+</div>
 
 <script src="script.js"></script>
 </body>
