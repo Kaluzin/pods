@@ -3,126 +3,551 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Pods | Ignite & Elfbar</title>
+<title>011 dos Pods | Elfbar & Lost Mary</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <a href="https://wa.me/5511947871294?text=Olá%2C+preciso+de+ajuda+com+meu+pedido." target="_blank">
+    <strong>📲 FALE CONOSCO PELO WHATSAPP: (11) 94787-1294</strong>
+  </a>
+</div>
+
+<!-- Header -->
 <header class="header">
-    <div class="logo">ELITE PODS</div>
+  <div class="header-inner">
+    <div class="logo">011 DOS PODS</div>
     <nav class="nav">
-        <a href="#home">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#avaliacoes">Avaliações</a>
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
     </nav>
-    <div class="menu-btn">☰</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#inicio" onclick="toggleMenu()">Início</a>
+    <a href="#produtos" onclick="toggleMenu()">Produtos</a>
+    <a href="#vantagens" onclick="toggleMenu()">Vantagens</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#contato" onclick="toggleMenu()">Contato</a>
+  </div>
 </header>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Pods Premium Originais</h1>
-        <p>Ignite • Elfbar • Alta Performance</p>
-        <a href="#produtos" class="btn">Ver Catálogo</a>
+<!-- Hero -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <span class="hero-badge">Loja Oficial</span>
+    <h1>Pods Premium<br><span class="highlight">Originais</span></h1>
+    <p>Elfbar • Lost Mary • Alta Performance<br>Entrega Rápida em Todo o Brasil</p>
+    <div class="hero-btns">
+      <a href="#produtos" class="btn btn-primary">Ver Catálogo</a>
+      <a href="https://wa.me/5511947871294" target="_blank" class="btn btn-outline">💬 WhatsApp</a>
     </div>
+  </div>
 </section>
 
+<!-- Trust Badges -->
+<section class="trust-badges">
+  <div class="container">
+    <div class="badge-item">
+      <img src="https://elfvapebrasil.com/wp-content/uploads/2024/11/Group-19-7-1-1.png" alt="Produto Original">
+      <span>Produto Original</span>
+    </div>
+    <div class="badge-item">
+      <img src="https://elfvapebrasil.com/wp-content/uploads/2024/04/Group-18-11.png" alt="Envio Rápido">
+      <span>Envio Rápido</span>
+    </div>
+    <div class="badge-item">
+      <img src="https://elfvapebrasil.com/wp-content/uploads/2024/11/Group-2294.png" alt="Compra Segura">
+      <span>Compra Segura</span>
+    </div>
+    <div class="badge-item">
+      <img src="https://elfvapebrasil.com/wp-content/uploads/2024/11/Group-2293-1.png" alt="Qualidade Garantida">
+      <span>Qualidade Garantida</span>
+    </div>
+  </div>
+</section>
+
+<!-- Linha Elfbar 40K -->
 <section class="produtos" id="produtos">
-    <h2>Catálogo</h2>
-
+  <div class="container">
+    <div class="section-header">
+      <h2>Linha Completa Elfbar 40K | Melhor Preço</h2>
+    </div>
     <div class="grid">
-
-    
-        <div class="card">
-            <img src="images/1.jpg" alt="Ignite V15">
-            <h3>Ignite V15</h3>
-            <p class="price">R$ 40,00</p>
-            <button onclick="comprar('Ignite V15')">Comprar</button>
-        </div>
-
-        
-        <div class="card">
-            <img src="images/2.jpg" alt="Ignite V50">
-            <h3>Ignite V50</h3>
-            <p class="price">R$ 50,00</p>
-            <button onclick="comprar('Ignite V50')">Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="images/3.jpg" alt="Ignite V8000">
-            <h3>Ignite V8000</h3>
-            <p class="price">R$ 65,00</p>
-            <button onclick="comprar('Ignite V8000')">Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="images/4.jpg" alt="Ignite V15000">
-            <h3>Ignite V15000</h3>
-            <p class="price">R$ 74,99</p>
-            <button onclick="comprar('Ignite V15000')">Comprar</button>
-        </div>
-
-            <div class="card">
-            <img src="images/5.jpg" alt="Ignite V25000">
-            <h3>Ignite V25000</h3>
-            <p class="price">R$ 85,00</p>
-            <button onclick="comprar('Ignite V25000')">Comprar</button>
-        </div>
-
-        <!-- V400 -->
-        <div class="card">
-            <img src="images/6.jpg" alt="Ignite V400 Mix">
-            <h3>Ignite V400 Mix</h3>
-            <p class="price">R$ 96,99</p>
-            <button onclick="comprar('Ignite V400 Mix')">Comprar</button>
-        </div>
-
-        <!-- BC5000 -->
-        <div class="card">
-            <img src="images/7.jpg" alt="Elfbar BC5000">
-            <h3>Elfbar BC5000</h3>
-            <p class="price">R$ 54,99</p>
-            <button onclick="comprar('Elfbar BC5000')">Comprar</button>
-        </div>
-
-        <!-- BC10000 -->
-        <div class="card">
-            <img src="images/8.jpg" alt="Elfbar BC10000">
-            <h3>Elfbar BC10000</h3>
-            <p class="price">R$ 67,99</p>
-            <button onclick="comprar('Elfbar BC10000')">Comprar</button>
-        </div>
-
-        <!-- TE30K -->
-        <div class="card">
-            <img src="images/9.jpg" alt="Elfbar TE 30K">
-            <h3>Elfbar TE 30K</h3>
-            <p class="price">R$ 79,99</p>
-            <button onclick="comprar('Elfbar TE 30K')">Comprar</button>
-        </div>
-
+      <div class="card">
+        <div class="badge-sale">-29%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Ice King 40K">
+        <h3>Elfbar Ice King 40K – Pod Descartável</h3>
+        <p class="price-old">R$ 209,90</p>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('Elfbar Ice King 40K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-new">Lançamento</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/24-500x500.jpg" alt="Elfbar Ice King 40K Summer Edition">
+        <h3>ELFBAR Ice King 40K Summer Edition</h3>
+        <p class="price-old">R$ 209,90</p>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('ELFBAR Ice King 40K Summer Edition')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-29%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Nic King 40K">
+        <h3>Elfbar Nic King 40K – Pod Descartável</h3>
+        <p class="price-old">R$ 209,90</p>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('Elfbar Nic King 40K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-29%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Sour King 40K">
+        <h3>Elfbar Sour King 40K – Pod Descartável</h3>
+        <p class="price-old">R$ 209,90</p>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('Elfbar Sour King 40K')">Comprar</button>
+      </div>
     </div>
+  </div>
 </section>
 
-<section class="avaliacoes" id="avaliacoes">
-    <h2>Avaliações</h2>
-    <div class="reviews">
-        <div class="review">
-            ⭐⭐⭐⭐⭐
-            <p>Produto original e entrega rápida!</p>
-        </div>
-        <div class="review">
-            ⭐⭐⭐⭐⭐
-            <p>Qualidade absurda, recomendo.</p>
-        </div>
-        <div class="review">
-            ⭐⭐⭐⭐☆
-            <p>Atendimento excelente no WhatsApp.</p>
-        </div>
+<!-- Destaques -->
+<section class="produtos produtos-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2>Destaques e Novidades | Pod Descartável Elfbar</h2>
     </div>
+    <div class="grid">
+      <div class="card">
+        <div class="badge-sale">-23%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar BC10000">
+        <h3>Elfbar BC10000 Puffs – Pod Descartável</h3>
+        <p class="price-old">R$ 129,90</p>
+        <p class="price">R$ 99,90</p>
+        <p class="price-pix">R$ 94,91 no Pix</p>
+        <button onclick="comprar('Elfbar BC10000')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-13%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar BC45K Pro">
+        <h3>Elfbar BC45K Pro – Pod Descartável</h3>
+        <p class="price-old">R$ 189,90</p>
+        <p class="price">R$ 164,90</p>
+        <p class="price-pix">R$ 156,66 no Pix</p>
+        <button onclick="comprar('Elfbar BC45K Pro')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-40%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2025/05/GH23K-Elfbar-Brasil.png" alt="Elfbar GH 23K">
+        <h3>Elfbar GH 23K – 23000 Puffs – Pod Descartável</h3>
+        <p class="price-old">R$ 199,90</p>
+        <p class="price">R$ 119,90</p>
+        <p class="price-pix">R$ 113,91 no Pix</p>
+        <button onclick="comprar('Elfbar GH 23K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-7%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TE 30K">
+        <h3>Elfbar TE 30K – 30000 Puffs – Pod Descartável Original</h3>
+        <p class="price-old">R$ 139,90</p>
+        <p class="price">R$ 129,90</p>
+        <p class="price-pix">R$ 123,41 no Pix</p>
+        <button onclick="comprar('Elfbar TE 30K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-7%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TE 30K Black Gold">
+        <h3>Elfbar TE 30K Black Gold – Pod Descartável</h3>
+        <p class="price-old">R$ 139,90</p>
+        <p class="price">R$ 129,90</p>
+        <p class="price-pix">R$ 123,41 no Pix</p>
+        <button onclick="comprar('Elfbar TE 30K Black Gold')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-30%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TRIO 40K">
+        <h3>Elfbar TRIO 40K – Pod Descartável</h3>
+        <p class="price-old">R$ 219,90</p>
+        <p class="price">R$ 154,90</p>
+        <p class="price-pix">R$ 147,16 no Pix</p>
+        <button onclick="comprar('Elfbar TRIO 40K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-35%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary Mixer 30K">
+        <h3>Lost Mary Mixer 30K – Pod Descartável</h3>
+        <p class="price-old">R$ 199,90</p>
+        <p class="price">R$ 129,90</p>
+        <p class="price-pix">R$ 123,41 no Pix</p>
+        <button onclick="comprar('Lost Mary Mixer 30K')">Comprar</button>
+      </div>
+      <div class="card">
+        <div class="badge-sale">-20%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Nicotine Pouch Elfbar Tacja">
+        <h3>Nicotine Pouch Elfbar Tacja – 20 Unidades</h3>
+        <p class="price-old">R$ 99,90</p>
+        <p class="price">R$ 79,90</p>
+        <p class="price-pix">R$ 75,91 no Pix</p>
+        <button onclick="comprar('Nicotine Pouch Elfbar Tacja')">Comprar</button>
+      </div>
+    </div>
+  </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5511947871297" target="_blank">💬</a>
+<!-- Refil -->
+<section class="produtos">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pod Descartáveis de Refil | Praticidade</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar EW16000">
+        <h3>Elfbar EW16000 – Bateria Smart + Refil 16.000 Puffs</h3>
+        <p class="price">R$ 199,90</p>
+        <p class="price-pix">R$ 189,91 no Pix</p>
+        <button onclick="comprar('Elfbar EW16000 Bateria+Refil')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar EW16000 Refil">
+        <h3>Pod Elfbar EW16000 – Refil 16000 Puffs</h3>
+        <p class="price">R$ 99,90</p>
+        <p class="price-pix">R$ 94,91 no Pix</p>
+        <button onclick="comprar('Pod Elfbar EW16000 Refil')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar E-Shisha Luxe 18K">
+        <h3>Elfbar E-Shisha Luxe 18K – Pod DTL</h3>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('Elfbar E-Shisha Luxe 18K')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar EW9000">
+        <h3>Elfbar EW9000 – Bateria + 1 Refil 9.000 Puffs</h3>
+        <p class="price">R$ 149,90</p>
+        <p class="price-pix">R$ 142,41 no Pix</p>
+        <button onclick="comprar('Elfbar EW9000 Bateria+1 Refil')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar EW9000 Refil">
+        <h3>Pod Elfbar EW9000 Refil 9000 Puffs</h3>
+        <p class="price">R$ 79,90</p>
+        <p class="price-pix">R$ 75,91 no Pix</p>
+        <button onclick="comprar('Pod Elfbar EW9000 Refil')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar EW9000 Bateria+2 Refis">
+        <h3>Elfbar EW9000 – Bateria + 2 Refis 9.000 Puffs</h3>
+        <p class="price">R$ 199,90</p>
+        <p class="price-pix">R$ 189,91 no Pix</p>
+        <button onclick="comprar('Elfbar EW9000 Bateria+2 Refis')">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lost Mary -->
+<section class="produtos produtos-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2>Linha Completa Elfbar Lost Mary</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="badge-sale">-40%</div>
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO10000">
+        <h3>Lost Mary MO10000 Puffs – Pod Descartável</h3>
+        <p class="price-old">R$ 199,90</p>
+        <p class="price">R$ 119,90</p>
+        <p class="price-pix">R$ 113,91 no Pix</p>
+        <button onclick="comprar('Lost Mary MO10000')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MT15000 Turbo">
+        <h3>Lost Mary MT15000 Turbo – Pod Descartável</h3>
+        <p class="price">R$ 129,90</p>
+        <p class="price-pix">R$ 123,41 no Pix</p>
+        <button onclick="comprar('Lost Mary MT15000 Turbo')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO20000 Mega">
+        <h3>Lost Mary MO20000 Mega – Pod Descartável</h3>
+        <p class="price">R$ 154,90</p>
+        <p class="price-pix">R$ 147,16 no Pix</p>
+        <button onclick="comprar('Lost Mary MO20000 Mega')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary Losgal MC25000">
+        <h3>Lost Mary Losgal MC25000 – Pod Descartável</h3>
+        <p class="price">R$ 164,90</p>
+        <p class="price-pix">R$ 156,66 no Pix</p>
+        <button onclick="comprar('Lost Mary Losgal MC25000')">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Líquidos -->
+<section class="produtos">
+  <div class="container">
+    <div class="section-header">
+      <h2>Líquidos Elfbar</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Apple Peach">
+        <h3>Elfbar Juice Apple Peach 30ml/35mg – ELFLIQ</h3>
+        <p class="price">R$ 49,90</p>
+        <p class="price-pix">R$ 47,41 no Pix</p>
+        <button onclick="comprar('Elfbar Juice Apple Peach')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Spearmint">
+        <h3>Elfbar Juice Spearmint 30ml/35mg – ELFLIQ</h3>
+        <p class="price">R$ 49,90</p>
+        <p class="price-pix">R$ 47,41 no Pix</p>
+        <button onclick="comprar('Elfbar Juice Spearmint')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Strawberry Snoow">
+        <h3>Elfbar Juice Strawberry Snoow 30ml/35mg – ELFLIQ</h3>
+        <p class="price">R$ 49,90</p>
+        <p class="price-pix">R$ 47,41 no Pix</p>
+        <button onclick="comprar('Elfbar Juice Strawberry Snoow')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar Juice Watermelon Ice">
+        <h3>Elfbar Juice Watermelon Ice 30ml/35mg – ELFLIQ</h3>
+        <p class="price">R$ 49,90</p>
+        <p class="price-pix">R$ 47,41 no Pix</p>
+        <button onclick="comprar('Elfbar Juice Watermelon Ice')">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mais Visualizados -->
+<section class="produtos produtos-dark">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pod Descartáveis Mais Visualizados</h2>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar BC10000">
+        <h3>Elfbar BC10000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 99,90</p>
+        <p class="price-pix">R$ 94,91 no Pix</p>
+        <button onclick="comprar('Elfbar BC10000 Puffs')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Lost Mary MO5000">
+        <h3>Lost Mary MO5000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 79,90</p>
+        <p class="price-pix">R$ 75,91 no Pix</p>
+        <button onclick="comprar('Lost Mary MO5000')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Elfbar TE5000">
+        <h3>Elfbar TE5000 Puffs – Pod Descartável</h3>
+        <p class="price">R$ 79,90</p>
+        <p class="price-pix">R$ 75,91 no Pix</p>
+        <button onclick="comprar('Elfbar TE5000')">Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://elfvapebrasil.com/wp-content/uploads/2024/03/1-500x500.jpg" alt="Pod Elfbar Lowit 5500">
+        <h3>Pod Elfbar Lowit 5500 Puffs – Refil</h3>
+        <p class="price">R$ 59,90</p>
+        <p class="price-pix">R$ 56,91 no Pix</p>
+        <button onclick="comprar('Pod Elfbar Lowit 5500')">Comprar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vantagens -->
+<section class="vantagens" id="vantagens">
+  <div class="container">
+    <div class="section-header">
+      <h2>Por que escolher a 011 dos Pods?</h2>
+      <p>Se você quer parar de fumar ou está começando uma jornada sem tabaco, nossos produtos garantem qualidade e autenticidade, sem conter tabaco para uma experiência mais segura.</p>
+    </div>
+    <div class="vantagens-grid">
+      <div class="vantagem-item">
+        <div class="vantagem-icon">🌿</div>
+        <h3>Sem Fumaça Passiva</h3>
+        <p>Ao produzir vapor em vez de fumaça, nossos produtos são livres de subprodutos perigosos da combustão, protegendo você e o ambiente.</p>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">🎯</div>
+        <h3>Controle de Nicotina</h3>
+        <p>Tenha total controle sob o teor de nicotina utilizado. Variedade de sabores: frutas, tabaco, bebidas, sobremesas, mentolados.</p>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">✅</div>
+        <h3>Apenas 4 Compostos</h3>
+        <p>Apenas 4 compostos, comparados às mais de 4.000 substâncias tóxicas do cigarro tradicional.</p>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">📱</div>
+        <h3>Fácil de Usar</h3>
+        <p>Operação simples, sem necessidade de conhecimento prévio, ideais tanto para iniciantes quanto para veteranos.</p>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">🚀</div>
+        <h3>Dispositivos Portáteis</h3>
+        <p>Dispositivos portáteis sempre prontos para uso. Descartáveis, sem necessidade de recarga ou limpeza.</p>
+      </div>
+      <div class="vantagem-item">
+        <div class="vantagem-icon">🏆</div>
+        <h3>Marca Líder Mundial</h3>
+        <p>O Elf Bar é líder mundial em cigarros eletrônicos desde 2018, com experiência intensa, aromática e saborosa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <h2>Perguntas Frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Quais são as vantagens dos cigarros eletrônicos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>👉 Apenas 4 compostos, comparados às mais de 4.000 substâncias tóxicas do cigarro tradicional.</p>
+          <p>👉 Dispositivos portáteis sempre prontos para uso.</p>
+          <p>👉 Operação simples, sem necessidade de conhecimento prévio, ideais tanto para iniciantes quanto para veteranos.</p>
+          <p>👉 Variedade de Elfbar sabores (frutas, tabaco, bebidas, sobremesas, mentolados).</p>
+          <p>👉 Tenha total controle sob o teor de nicotina utilizado.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Quanto tempo dura um pod de 5000 puffs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>O tempo de duração de um pod de 5000 puffs varia de acordo com o hábito de uso individual e a quantidade de nicotina consumida. Por exemplo, um pod com 20mg/ml de nicotina e 600 puffs equivale a cerca de 20 cigarros. O ritmo de consumo varia entre os usuários, podendo algumas pessoas consumirem 20 cigarros em um dia, enquanto outras podem levar uma semana inteira para atingir essa quantidade.</p>
+          <p>No caso do Elf Bar Lost Mary MO5000, que tem uma concentração de nicotina mais alta, de 50mg/ml, isso significa que você pode satisfazer sua necessidade de nicotina com menos puffs diários. Se você fuma cerca de 20 cigarros por semana, esse pod descartável pode durar mais de 4 semanas.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como saber se o Elfbar está carregado?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Para saber se o Elfbar está carregado, geralmente os dispositivos vêm com indicadores de bateria que podem ser visualizados no próprio dispositivo. Esses indicadores podem ser luzes LED que indicam o nível de carga da bateria.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como carregar o Elfbar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>É necessário conectar o dispositivo a uma fonte de energia usando um cabo USB tipo C. O processo de carregamento pode variar entre 40 e 100 minutos dependendo do modelo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como saber se o produto é original?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Há um código QR na embalagem do produto que pode ser escaneado e verificado no site do fabricante. Os dispositivos mais buscados são Elfbar 5000, Elfbar 4000 e Elfbar 10000. Esses tiveram uma grande popularidade não apenas no Brasil como em todo o mundo. Todos os produtos da 011 dos Pods são 100% originais e verificáveis.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Descubra os cigarros eletrônicos Elf Bar e Lost Mary
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Descubra os cigarros eletrônicos Elf bar, Lost Mary, Funky Republic e Funky Lands, oferecendo simplicidade, satisfação e opções de nicotina personalizadas para uma experiência única.</p>
+          <p>Descartáveis, fáceis de usar e ambientalmente amigáveis, sem necessidade de recarga ou limpeza, garantindo uma experiência vaping sem fumaça ou resíduos desagradáveis.</p>
+          <p>O pod Elf Bar é conhecido por proporcionar uma experiência intensa, aromática e saborosa desde que a marca foi fundada em 2018, tornando-se rapidamente líder mundial em cigarros eletrônicos e líquidos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter" id="contato">
+  <div class="container">
+    <div class="newsletter-content">
+      <h2>CADASTRE-SE NA NEWSLETTER</h2>
+      <p>e receba novidades e promoções</p>
+      <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-logo">011 DOS PODS</h4>
+        <p>Loja especializada em pods descartáveis originais. Elfbar, Lost Mary e muito mais.</p>
+        <a href="https://wa.me/5511947871294" target="_blank" class="whatsapp-link">💬 (11) 94787-1294</a>
+      </div>
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#vantagens">Vantagens</a></li>
+          <li><a href="#faq">Perguntas Frequentes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="https://wa.me/5511947871294" target="_blank">WhatsApp</a></li>
+          <li><a href="#faq">Dúvidas Frequentes</a></li>
+          <li><a href="#contato">Newsletter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="#produtos">Elfbar 40K</a></li>
+          <li><a href="#produtos">Lost Mary</a></li>
+          <li><a href="#produtos">Refil Pods</a></li>
+          <li><a href="#produtos">Líquidos ELFLIQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 011 dos Pods. Todos os direitos reservados.</p>
+      <p class="disclaimer">Produto destinado exclusivamente para maiores de 18 anos. Contém nicotina, substância que causa dependência. Proibida a venda para menores de 18 anos.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float" href="https://wa.me/5511947871294?text=Olá%2C+gostaria+de+saber+mais+sobre+os+produtos." target="_blank">💬</a>
 
 <script src="script.js"></script>
 </body>
