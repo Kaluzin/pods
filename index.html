@@ -39,9 +39,9 @@
           <div class="user-dropdown-name" id="userDropdownName"></div>
           <div class="user-dropdown-email" id="userDropdownEmail"></div>
           <hr class="user-dropdown-divider">
-          <a href="#" class="user-dropdown-item">Meus Pedidos</a>
-          <a href="#" class="user-dropdown-item">Minha Conta</a>
-          <a href="#" class="user-dropdown-item">Favoritos</a>
+          <a href="/minha-conta.html#pedidos" class="user-dropdown-item">Meus Pedidos</a>
+          <a href="/minha-conta.html#dados" class="user-dropdown-item">Minha Conta</a>
+          <a href="/minha-conta.html#favoritos" class="user-dropdown-item">Favoritos</a>
           <hr class="user-dropdown-divider">
           <a href="#" class="user-dropdown-item user-dropdown-logout" onclick="sairConta(event)">Sair da Conta</a>
         </div>
@@ -1093,34 +1093,32 @@
     <button class="auth-tab" id="tabCadastrar" onclick="mudarAba('cadastrar')">Criar Conta</button>
   </div>
 
+  <!-- VIEW: Login -->
   <div class="auth-content" id="authEntrar">
     <p class="auth-subtitle">Acesse sua conta para acompanhar pedidos e ofertas exclusivas</p>
-
     <div class="auth-socials">
-      <button class="auth-social-btn google" onclick="loginSocial('Google')">
+      <button class="auth-social-btn google" onclick="loginSocial('google')">
         <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
-        Continuar com Google (Gmail)
+        Entrar com Google (Gmail)
       </button>
-      <button class="auth-social-btn microsoft" onclick="loginSocial('Microsoft')">
+      <button class="auth-social-btn microsoft" onclick="loginSocial('microsoft')">
         <svg width="20" height="20" viewBox="0 0 21 21"><rect x="1" y="1" width="9" height="9" fill="#F25022"/><rect x="11" y="1" width="9" height="9" fill="#7FBA00"/><rect x="1" y="11" width="9" height="9" fill="#00A4EF"/><rect x="11" y="11" width="9" height="9" fill="#FFB900"/></svg>
-        Continuar com Microsoft (Hotmail/Outlook)
+        Entrar com Microsoft (Hotmail/Outlook)
       </button>
-      <button class="auth-social-btn apple" onclick="loginSocial('Apple')">
+      <button class="auth-social-btn apple" onclick="loginSocial('apple')">
         <svg width="20" height="20" viewBox="0 0 814 1000"><path fill="currentColor" d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.3-49 31 0 108.2 2.6 168.6 71.9zm-174.5-89.5c31.3-37.5 53.3-89.5 53.3-141.5 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 84.4-55.1 137.1 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.3-70.7z"/></svg>
-        Continuar com Apple (iCloud)
+        Entrar com Apple (iCloud)
       </button>
-      <button class="auth-social-btn facebook" onclick="loginSocial('Facebook')">
+      <button class="auth-social-btn facebook" onclick="loginSocial('facebook')">
         <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Continuar com Facebook
+        Entrar com Facebook
       </button>
-      <button class="auth-social-btn yahoo" onclick="loginSocial('Yahoo')">
+      <button class="auth-social-btn yahoo" onclick="loginSocial('yahoo')">
         <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#6001D2" d="M.39 3.037h4.204l3.808 7.79 3.824-7.79H16.4l-7.019 14.076v3.926h-3.96v-3.96L.39 3.037zm17.093 11.166l-1.68 3.92h-2.208l1.68-3.92h2.208zm2.528-11.166h-2.18l-4.09 9.94h2.174l.9-2.17h4.11l.9 2.17H24l-4.09-9.94zm-2.52 5.9l1.29-3.15 1.31 3.15h-2.6z"/></svg>
-        Continuar com Yahoo
+        Entrar com Yahoo
       </button>
     </div>
-
     <div class="auth-divider"><span>ou use seu e-mail</span></div>
-
     <form class="auth-form" onsubmit="submitLogin(event)">
       <div class="auth-field">
         <label>E-mail</label>
@@ -1133,57 +1131,117 @@
           <button type="button" class="auth-eye" onclick="toggleSenha('loginSenha', this)">👁</button>
         </div>
       </div>
-      <a href="#" class="auth-forgot">Esqueci minha senha</a>
-      <button type="submit" class="auth-submit">Entrar na Conta</button>
+      <div id="loginErro" class="auth-msg-err" style="display:none;"></div>
+      <a href="#" class="auth-forgot" onclick="mostrarEsqueciSenha(); return false;">Esqueci minha senha</a>
+      <button type="submit" class="auth-submit" id="btnLogin">Entrar na Conta</button>
     </form>
     <p class="auth-switch">Não tem conta? <a href="#" onclick="mudarAba('cadastrar'); return false;">Criar agora</a></p>
   </div>
 
+  <!-- VIEW: Esqueci Senha -->
+  <div class="auth-content" id="authEsqueci" style="display:none;">
+    <button class="auth-back" onclick="voltarLogin()">← Voltar</button>
+    <h3 style="color:var(--white);margin-bottom:8px;">Redefinir senha</h3>
+    <p class="auth-subtitle">Informe seu e-mail e enviaremos um link de redefinição.</p>
+    <form class="auth-form" onsubmit="submitEsqueciSenha(event)">
+      <div class="auth-field">
+        <label>E-mail cadastrado</label>
+        <input type="email" id="esqueciEmail" placeholder="seu@email.com" autocomplete="email" required>
+      </div>
+      <div id="esqueciMsg" class="conta-msg" style="margin:8px 0;"></div>
+      <div id="esqueciLink" class="auth-reset-link" style="display:none;"></div>
+      <button type="submit" class="auth-submit" id="btnEsqueci">Enviar link de redefinição</button>
+    </form>
+  </div>
+
+  <!-- VIEW: Cadastro -->
   <div class="auth-content" id="authCadastrar" style="display:none;">
     <p class="auth-subtitle">Crie sua conta e aproveite ofertas exclusivas para membros</p>
-
     <div class="auth-socials">
-      <button class="auth-social-btn google" onclick="loginSocial('Google')">
+      <button class="auth-social-btn google" onclick="loginSocial('google')">
         <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></svg>
         Cadastrar com Google (Gmail)
       </button>
-      <button class="auth-social-btn microsoft" onclick="loginSocial('Microsoft')">
+      <button class="auth-social-btn microsoft" onclick="loginSocial('microsoft')">
         <svg width="20" height="20" viewBox="0 0 21 21"><rect x="1" y="1" width="9" height="9" fill="#F25022"/><rect x="11" y="1" width="9" height="9" fill="#7FBA00"/><rect x="1" y="11" width="9" height="9" fill="#00A4EF"/><rect x="11" y="11" width="9" height="9" fill="#FFB900"/></svg>
         Cadastrar com Microsoft (Hotmail/Outlook)
       </button>
-      <button class="auth-social-btn apple" onclick="loginSocial('Apple')">
+      <button class="auth-social-btn apple" onclick="loginSocial('apple')">
         <svg width="20" height="20" viewBox="0 0 814 1000"><path fill="currentColor" d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.3-49 31 0 108.2 2.6 168.6 71.9zm-174.5-89.5c31.3-37.5 53.3-89.5 53.3-141.5 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 84.4-55.1 137.1 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.3-70.7z"/></svg>
         Cadastrar com Apple (iCloud)
       </button>
-      <button class="auth-social-btn facebook" onclick="loginSocial('Facebook')">
-        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Cadastrar com Facebook
-      </button>
-      <button class="auth-social-btn yahoo" onclick="loginSocial('Yahoo')">
-        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#6001D2" d="M.39 3.037h4.204l3.808 7.79 3.824-7.79H16.4l-7.019 14.076v3.926h-3.96v-3.96L.39 3.037zm17.093 11.166l-1.68 3.92h-2.208l1.68-3.92h2.208zm2.528-11.166h-2.18l-4.09 9.94h2.174l.9-2.17h4.11l.9 2.17H24l-4.09-9.94zm-2.52 5.9l1.29-3.15 1.31 3.15h-2.6z"/></svg>
-        Cadastrar com Yahoo
-      </button>
     </div>
-
-    <div class="auth-divider"><span>ou crie com e-mail</span></div>
-
+    <div class="auth-divider"><span>ou preencha o formulário</span></div>
     <form class="auth-form" onsubmit="submitCadastro(event)">
       <div class="auth-field">
-        <label>Nome Completo</label>
-        <input type="text" id="cadastroNome" placeholder="Seu nome completo" required>
+        <label>Sou</label>
+        <select id="cadastroTipo" class="auth-select">
+          <option value="pf">Pessoa Física (não tenho CNPJ)</option>
+          <option value="pj">Pessoa Jurídica (tenho CNPJ)</option>
+        </select>
       </div>
       <div class="auth-field">
-        <label>E-mail</label>
+        <label>Nome completo *</label>
+        <input type="text" id="cadastroNome" placeholder="Seu nome completo" autocomplete="name" required>
+      </div>
+      <div class="auth-form-2col">
+        <div class="auth-field">
+          <label>CPF *</label>
+          <input type="text" id="cadastroCpf" placeholder="000.000.000-00" oninput="formatarCPFInput(this)" required>
+        </div>
+        <div class="auth-field">
+          <label>RG / Insc. Estadual</label>
+          <input type="text" id="cadastroRg" placeholder="00.000.000-0">
+        </div>
+      </div>
+      <div class="auth-form-2col">
+        <div class="auth-field">
+          <label>Celular *</label>
+          <input type="text" id="cadastroCelular" placeholder="(__)_____-____" oninput="formatarTelInput(this)" required>
+        </div>
+        <div class="auth-field">
+          <label>Telefone</label>
+          <input type="text" id="cadastroTelefone" placeholder="(__)____-____">
+        </div>
+      </div>
+      <div class="auth-field">
+        <label>Data de nascimento *</label>
+        <input type="date" id="cadastroNascimento" required>
+      </div>
+      <hr class="auth-form-divider">
+      <p class="auth-section-label">Informações de acesso</p>
+      <div class="auth-field">
+        <label>E-mail *</label>
         <input type="email" id="cadastroEmail" placeholder="seu@email.com" autocomplete="email" required>
       </div>
       <div class="auth-field">
-        <label>Senha</label>
+        <label>Repita seu e-mail *</label>
+        <input type="email" id="cadastroEmailConf" placeholder="confirme seu e-mail" required>
+      </div>
+      <div class="auth-field">
+        <label>Senha *</label>
         <div class="auth-password-wrap">
           <input type="password" id="cadastroSenha" placeholder="Mínimo 6 caracteres" minlength="6" autocomplete="new-password" required>
           <button type="button" class="auth-eye" onclick="toggleSenha('cadastroSenha', this)">👁</button>
         </div>
       </div>
-      <button type="submit" class="auth-submit">Criar Minha Conta</button>
+      <div class="auth-field">
+        <label>Repita sua senha *</label>
+        <div class="auth-password-wrap">
+          <input type="password" id="cadastroSenhaConf" placeholder="confirme sua senha" minlength="6" autocomplete="new-password" required>
+          <button type="button" class="auth-eye" onclick="toggleSenha('cadastroSenhaConf', this)">👁</button>
+        </div>
+      </div>
+      <label class="auth-checkbox-row">
+        <input type="checkbox" id="cadastroNewsletter" checked>
+        <span>Quero assinar o recebimento da Newsletter</span>
+      </label>
+      <label class="auth-checkbox-row">
+        <input type="checkbox" id="cadastroMarketing" checked>
+        <span>Autorizo a utilização dos meus dados para receber promoções e recomendações de produtos para meu perfil</span>
+      </label>
+      <div id="cadastroErro" class="auth-msg-err" style="display:none;"></div>
+      <button type="submit" class="auth-submit auth-submit-green" id="btnCadastro">CONCLUIR CADASTRO</button>
     </form>
     <p class="auth-switch">Já tem conta? <a href="#" onclick="mudarAba('entrar'); return false;">Entrar agora</a></p>
   </div>
@@ -1205,8 +1263,18 @@
     <div id="freteModalResultado" class="frete-resultado"></div>
   </div>
 
-  <div class="modal-section pix-section">
-    <h3>Pagamento via PIX</h3>
+  <!-- Abas de Pagamento -->
+  <div class="pay-tabs">
+    <button class="pay-tab active" id="payTabPix" onclick="mudarPagamento('pix', this)">
+      💰 PIX <span class="pay-tab-badge">5% OFF</span>
+    </button>
+    <button class="pay-tab" id="payTabCartao" onclick="mudarPagamento('cartao', this)">
+      💳 Cartão de Crédito
+    </button>
+  </div>
+
+  <!-- PIX -->
+  <div id="payPix" class="modal-section pix-section">
     <p class="pix-desconto">✅ 5% de desconto pagando com PIX!</p>
     <div class="pix-total" id="pixTotal"></div>
     <div class="pix-key-box">
@@ -1222,11 +1290,32 @@
       <p>3. Cole a chave acima e confirme o valor</p>
       <p>4. Envie o comprovante pelo WhatsApp: <a href="https://wa.me/5511947871294" target="_blank">(11) 94787-1294</a></p>
     </div>
+    <a id="modalWhatsapp" href="#" target="_blank" class="btn btn-primary btn-block" onclick="registrarPedido('pix')">
+      💬 Confirmar pelo WhatsApp (PIX)
+    </a>
   </div>
 
-  <a id="modalWhatsapp" href="#" target="_blank" class="btn btn-primary btn-block">
-    💬 Confirmar pelo WhatsApp
-  </a>
+  <!-- Cartão -->
+  <div id="payCartao" class="modal-section" style="display:none;">
+    <div class="pix-total" id="cartaoTotal"></div>
+    <div class="cartao-info">
+      <p style="color:#aaa;font-size:13px;margin-bottom:12px;">Finalize pelo WhatsApp e combine a forma de pagamento com cartão. Aceitamos parcelamento em até 3x sem juros.</p>
+      <div class="cartao-bandeiras">
+        <span class="cartao-bandeira">VISA</span>
+        <span class="cartao-bandeira">MASTER</span>
+        <span class="cartao-bandeira">ELO</span>
+        <span class="cartao-bandeira">AMEX</span>
+      </div>
+      <div style="margin:16px 0;padding:12px;background:#1a1a1a;border-radius:8px;border:1px solid #2a2a2a;">
+        <p style="font-size:12px;color:#888;">📦 Produto: <span id="cartaoProduto" style="color:#fff;"></span></p>
+        <p style="font-size:12px;color:#888;margin-top:6px;">🚚 Frete: <span id="cartaoFrete" style="color:#fff;"></span></p>
+        <p style="font-size:12px;color:#888;margin-top:6px;">💳 Parcelamento: <span id="cartaoParcelas" style="color:#e8b84b;"></span></p>
+      </div>
+    </div>
+    <a id="modalWhatsappCartao" href="#" target="_blank" class="btn btn-primary btn-block" onclick="registrarPedido('cartao')">
+      💬 Confirmar pelo WhatsApp (Cartão)
+    </a>
+  </div>
 </div>
 
 <script src="script.js"></script>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Conta | 011 dos Pods</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="announcement-bar">
+  <a href="https://wa.me/5511947871294?text=Olá%2C+preciso+de+ajuda+com+meu+pedido." target="_blank">
+    <strong>📲 FALE CONOSCO PELO WHATSAPP: (11) 94787-1294</strong>
+  </a>
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">011 DOS PODS</a>
+    <nav class="nav">
+      <a href="/#inicio">Início</a>
+      <a href="/#produtos">Pods</a>
+      <a href="/#vapes">Vapes</a>
+      <a href="/#juices">Juices</a>
+      <a href="/#frete">Frete</a>
+    </nav>
+    <div class="header-actions">
+      <div class="user-area" id="userArea" style="display:none;">
+        <button class="btn-login" onclick="window.location='/'">Entrar / Cadastrar</button>
+      </div>
+      <div class="user-logged" id="userLogged" style="display:none;">
+        <div class="user-avatar" onclick="toggleUserMenu()" id="userAvatar"></div>
+        <div class="user-dropdown" id="userDropdown">
+          <div class="user-dropdown-name" id="userDropdownName"></div>
+          <div class="user-dropdown-email" id="userDropdownEmail"></div>
+          <hr class="user-dropdown-divider">
+          <a href="#" class="user-dropdown-item" onclick="navegarConta('pedidos')">Meus Pedidos</a>
+          <a href="/minha-conta.html" class="user-dropdown-item">Minha Conta</a>
+          <a href="#" class="user-dropdown-item" onclick="navegarConta('favoritos')">Favoritos</a>
+          <hr class="user-dropdown-divider">
+          <a href="#" class="user-dropdown-item user-dropdown-logout" onclick="sairConta(event)">Sair da Conta</a>
+        </div>
+      </div>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/" onclick="toggleMenu()">Início</a>
+    <a href="/#produtos" onclick="toggleMenu()">Pods</a>
+    <a href="/#vapes" onclick="toggleMenu()">Vapes</a>
+  </div>
+</header>
+
+<!-- Conta Page -->
+<main class="conta-main">
+  <div class="conta-container">
+
+    <!-- Sidebar -->
+    <aside class="conta-sidebar">
+      <div class="conta-sidebar-user">
+        <div class="conta-sidebar-avatar" id="sidebarAvatar"></div>
+        <div>
+          <div class="conta-sidebar-name" id="sidebarName">Carregando...</div>
+          <div class="conta-sidebar-email" id="sidebarEmail"></div>
+        </div>
+      </div>
+      <nav class="conta-nav">
+        <button class="conta-nav-item active" data-section="pedidos" onclick="mostrarSecao('pedidos', this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          Meus pedidos
+        </button>
+        <button class="conta-nav-item" data-section="dados" onclick="mostrarSecao('dados', this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Meus dados
+        </button>
+        <button class="conta-nav-item" data-section="enderecos" onclick="mostrarSecao('enderecos', this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Meus endereços
+        </button>
+        <button class="conta-nav-item" data-section="favoritos" onclick="mostrarSecao('favoritos', this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Meus produtos favoritos
+        </button>
+        <button class="conta-nav-item" data-section="creditos" onclick="mostrarSecao('creditos', this)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Meus créditos
+        </button>
+        <button class="conta-nav-item conta-nav-sair" onclick="sairConta(event)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sair
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="conta-content">
+
+      <!-- Meus Pedidos -->
+      <div class="conta-section active" id="section-pedidos">
+        <h2 class="conta-section-title">Meus pedidos</h2>
+        <div id="pedidosLista">
+          <div class="conta-loading">Carregando pedidos...</div>
+        </div>
+      </div>
+
+      <!-- Meus Dados -->
+      <div class="conta-section" id="section-dados">
+        <h2 class="conta-section-title">Meus dados</h2>
+        <form class="conta-form" onsubmit="salvarDados(event)">
+          <div class="conta-form-row">
+            <div class="conta-form-field">
+              <label>Nome completo *</label>
+              <input type="text" id="dadosNome" required>
+            </div>
+            <div class="conta-form-field">
+              <label>E-mail</label>
+              <input type="email" id="dadosEmail" disabled style="opacity:0.5;cursor:not-allowed;">
+            </div>
+          </div>
+          <div class="conta-form-row">
+            <div class="conta-form-field">
+              <label>CPF</label>
+              <input type="text" id="dadosCpf" placeholder="000.000.000-00" oninput="formatarCPF(this)">
+            </div>
+            <div class="conta-form-field">
+              <label>RG / Insc. Estadual</label>
+              <input type="text" id="dadosRg" placeholder="00.000.000-0">
+            </div>
+          </div>
+          <div class="conta-form-row">
+            <div class="conta-form-field">
+              <label>Celular</label>
+              <input type="text" id="dadosTelefone" placeholder="(11) 99999-9999" oninput="formatarTelefone(this)">
+            </div>
+            <div class="conta-form-field">
+              <label>Data de nascimento</label>
+              <input type="date" id="dadosNascimento">
+            </div>
+          </div>
+          <div class="conta-form-checkboxes">
+            <label class="conta-checkbox-label">
+              <input type="checkbox" id="dadosNewsletter">
+              Quero receber novidades e promoções por e-mail
+            </label>
+            <label class="conta-checkbox-label">
+              <input type="checkbox" id="dadosMarketing">
+              Autorizo o uso dos meus dados para receber recomendações personalizadas
+            </label>
+          </div>
+          <div id="dadosMsg" class="conta-msg"></div>
+          <button type="submit" class="conta-btn-save">Salvar Alterações</button>
+        </form>
+
+        <div class="conta-senha-section">
+          <h3>Alterar Senha</h3>
+          <form class="conta-form conta-form-senha" onsubmit="alterarSenha(event)">
+            <div class="conta-form-field">
+              <label>Senha atual</label>
+              <input type="password" id="senhaAtual" autocomplete="current-password">
+            </div>
+            <div class="conta-form-field">
+              <label>Nova senha</label>
+              <input type="password" id="novaSenha" autocomplete="new-password" minlength="6">
+            </div>
+            <div class="conta-form-field">
+              <label>Confirmar nova senha</label>
+              <input type="password" id="confirmarSenha" autocomplete="new-password" minlength="6">
+            </div>
+            <div id="senhaMsg" class="conta-msg"></div>
+            <button type="submit" class="conta-btn-save">Alterar Senha</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Meus Endereços -->
+      <div class="conta-section" id="section-enderecos">
+        <div class="conta-section-header">
+          <h2 class="conta-section-title">Meus endereços</h2>
+          <button class="conta-btn-add" onclick="toggleAddEndereco()">+ Adicionar endereço</button>
+        </div>
+
+        <div class="conta-add-endereco" id="addEnderecoForm" style="display:none;">
+          <h4>Novo Endereço</h4>
+          <form onsubmit="salvarEndereco(event)">
+            <div class="conta-form-row">
+              <div class="conta-form-field">
+                <label>Label (ex: Casa, Trabalho)</label>
+                <input type="text" id="endLabel" value="Casa">
+              </div>
+              <div class="conta-form-field">
+                <label>CEP *</label>
+                <input type="text" id="endCep" placeholder="00000-000" oninput="formatarCep(this)" onblur="buscarEndCep()" maxlength="9" required>
+              </div>
+            </div>
+            <div class="conta-form-row">
+              <div class="conta-form-field" style="flex:2">
+                <label>Rua / Logradouro *</label>
+                <input type="text" id="endRua" required>
+              </div>
+              <div class="conta-form-field">
+                <label>Número *</label>
+                <input type="text" id="endNumero" required>
+              </div>
+            </div>
+            <div class="conta-form-row">
+              <div class="conta-form-field">
+                <label>Complemento</label>
+                <input type="text" id="endComplemento">
+              </div>
+              <div class="conta-form-field">
+                <label>Bairro *</label>
+                <input type="text" id="endBairro" required>
+              </div>
+            </div>
+            <div class="conta-form-row">
+              <div class="conta-form-field" style="flex:2">
+                <label>Cidade *</label>
+                <input type="text" id="endCidade" required>
+              </div>
+              <div class="conta-form-field">
+                <label>Estado *</label>
+                <input type="text" id="endEstado" maxlength="2" style="text-transform:uppercase" required>
+              </div>
+            </div>
+            <label class="conta-checkbox-label">
+              <input type="checkbox" id="endPadrao"> Definir como endereço padrão
+            </label>
+            <div id="endMsg" class="conta-msg"></div>
+            <button type="submit" class="conta-btn-save">Salvar Endereço</button>
+          </form>
+        </div>
+
+        <div id="endLista"><div class="conta-loading">Carregando endereços...</div></div>
+      </div>
+
+      <!-- Favoritos -->
+      <div class="conta-section" id="section-favoritos">
+        <h2 class="conta-section-title">Meus produtos favoritos</h2>
+        <div id="favoritosLista"><div class="conta-loading">Carregando favoritos...</div></div>
+      </div>
+
+      <!-- Créditos -->
+      <div class="conta-section" id="section-creditos">
+        <h2 class="conta-section-title">Meus créditos</h2>
+        <div class="conta-creditos-box">
+          <div class="conta-creditos-valor" id="creditosValor">R$ 0,00</div>
+          <p class="conta-creditos-info">Seus créditos podem ser usados na próxima compra. Entre em contato pelo WhatsApp para mais informações.</p>
+          <a href="https://wa.me/5511947871294" target="_blank" class="conta-btn-save" style="text-decoration:none;display:inline-block;text-align:center;margin-top:12px;">💬 Falar com Suporte</a>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="footer" style="margin-top:auto">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>&copy; 2025 011 dos Pods. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var currentUser = null;
+
+async function init() {
+  try {
+    const res = await fetch('/api/auth/me');
+    const data = await res.json();
+    if (!data.user) { window.location.href = '/?auth=login'; return; }
+    currentUser = data.user;
+    renderHeader(data.user);
+    carregarDados(data.user);
+    const hash = window.location.hash.replace('#', '') || 'pedidos';
+    const btn = document.querySelector('[data-section="' + hash + '"]');
+    mostrarSecao(hash, btn || document.querySelector('[data-section="pedidos"]'));
+  } catch(e) { window.location.href = '/'; }
+}
+
+function renderHeader(u) {
+  var iniciais = u.name.split(' ').map(function(p){return p[0];}).slice(0,2).join('').toUpperCase();
+  document.getElementById('userAvatar').textContent = iniciais;
+  document.getElementById('userDropdownName').textContent = u.name;
+  document.getElementById('userDropdownEmail').textContent = u.email;
+  document.getElementById('sidebarAvatar').textContent = iniciais;
+  document.getElementById('sidebarName').textContent = u.name;
+  document.getElementById('sidebarEmail').textContent = u.email;
+  document.getElementById('userLogged').style.display = 'flex';
+  document.getElementById('creditosValor').textContent = 'R$ ' + parseFloat(u.credits || 0).toFixed(2).replace('.', ',');
+}
+
+function carregarDados(u) {
+  document.getElementById('dadosNome').value = u.name || '';
+  document.getElementById('dadosEmail').value = u.email || '';
+  document.getElementById('dadosCpf').value = u.cpf || '';
+  document.getElementById('dadosRg').value = u.rg || '';
+  document.getElementById('dadosTelefone').value = u.phone || '';
+  if (u.birth_date) document.getElementById('dadosNascimento').value = u.birth_date.substring(0,10);
+  document.getElementById('dadosNewsletter').checked = u.newsletter || false;
+  document.getElementById('dadosMarketing').checked = u.marketing || false;
+}
+
+function mostrarSecao(nome, btn) {
+  document.querySelectorAll('.conta-section').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.conta-nav-item').forEach(function(b){b.classList.remove('active');});
+  var sec = document.getElementById('section-' + nome);
+  if (sec) sec.classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.location.hash = nome;
+  if (nome === 'pedidos') carregarPedidos();
+  if (nome === 'favoritos') carregarFavoritos();
+  if (nome === 'enderecos') carregarEnderecos();
+}
+
+async function carregarPedidos() {
+  var el = document.getElementById('pedidosLista');
+  try {
+    const res = await fetch('/api/user/orders');
+    const data = await res.json();
+    if (!data.orders || data.orders.length === 0) {
+      el.innerHTML = '<div class="conta-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><p>Você ainda não fez nenhum pedido em nossa loja.</p><a href="/" class="conta-btn-save" style="text-decoration:none;display:inline-block;text-align:center;margin-top:12px;">Ver Catálogo</a></div>';
+      return;
+    }
+    el.innerHTML = data.orders.map(function(o) {
+      var d = new Date(o.created_at);
+      var dt = d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+      var statusColor = o.status === 'concluido' ? '#00cc66' : o.status === 'cancelado' ? '#ff5555' : '#e8b84b';
+      return '<div class="conta-pedido-item"><div class="conta-pedido-info"><div class="conta-pedido-produto">' + o.product + '</div><div class="conta-pedido-data">' + dt + '</div></div><div class="conta-pedido-right"><div class="conta-pedido-total">R$ ' + parseFloat(o.total).toFixed(2).replace('.', ',') + '</div><div class="conta-pedido-status" style="color:' + statusColor + '">' + o.status.charAt(0).toUpperCase() + o.status.slice(1) + '</div></div></div>';
+    }).join('');
+  } catch(e) { el.innerHTML = '<div class="conta-loading">Erro ao carregar pedidos.</div>'; }
+}
+
+async function carregarFavoritos() {
+  var el = document.getElementById('favoritosLista');
+  try {
+    const res = await fetch('/api/user/favorites');
+    const data = await res.json();
+    if (!data.favorites || data.favorites.length === 0) {
+      el.innerHTML = '<div class="conta-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><p>Você ainda não tem produtos favoritos.</p><a href="/" class="conta-btn-save" style="text-decoration:none;display:inline-block;text-align:center;margin-top:12px;">Ver Catálogo</a></div>';
+      return;
+    }
+    el.innerHTML = '<div class="conta-favoritos-grid">' + data.favorites.map(function(f) {
+      return '<div class="conta-fav-card"><div class="conta-fav-nome">' + f.product_name + '</div><div class="conta-fav-preco">R$ ' + parseFloat(f.product_price||0).toFixed(2).replace('.', ',') + '</div><button class="conta-fav-remove" onclick="removerFavorito(' + f.id + ', this)">✕ Remover</button></div>';
+    }).join('') + '</div>';
+  } catch(e) { el.innerHTML = '<div class="conta-loading">Erro ao carregar favoritos.</div>'; }
+}
+
+async function removerFavorito(id, btn) {
+  try {
+    await fetch('/api/user/favorites/' + id, { method: 'DELETE' });
+    carregarFavoritos();
+  } catch(e) {}
+}
+
+async function carregarEnderecos() {
+  var el = document.getElementById('endLista');
+  try {
+    const res = await fetch('/api/user/addresses');
+    const data = await res.json();
+    if (!data.addresses || data.addresses.length === 0) {
+      el.innerHTML = '<div class="conta-empty"><p>Nenhum endereço cadastrado ainda.</p></div>';
+      return;
+    }
+    el.innerHTML = data.addresses.map(function(a) {
+      return '<div class="conta-end-item">' +
+        '<div class="conta-end-info"><div class="conta-end-label">' + a.label + (a.is_default ? ' <span class="conta-end-badge">Padrão</span>' : '') + '</div>' +
+        '<div class="conta-end-addr">' + a.street + ', ' + a.number + (a.complement ? ' - ' + a.complement : '') + '</div>' +
+        '<div class="conta-end-city">' + a.neighborhood + ' – ' + a.city + ' / ' + a.state + ' · CEP ' + a.cep + '</div></div>' +
+        '<button class="conta-fav-remove" onclick="removerEndereco(' + a.id + ')">✕</button></div>';
+    }).join('');
+  } catch(e) { el.innerHTML = '<div class="conta-loading">Erro.</div>'; }
+}
+
+async function removerEndereco(id) {
+  if (!confirm('Remover este endereço?')) return;
+  await fetch('/api/user/addresses/' + id, { method: 'DELETE' });
+  carregarEnderecos();
+}
+
+function toggleAddEndereco() {
+  var f = document.getElementById('addEnderecoForm');
+  f.style.display = f.style.display === 'none' ? 'block' : 'none';
+}
+
+async function buscarEndCep() {
+  var cep = document.getElementById('endCep').value.replace(/\D/g,'');
+  if (cep.length !== 8) return;
+  try {
+    const res = await fetch('https://viacep.com.br/ws/' + cep + '/json/');
+    const d = await res.json();
+    if (!d.erro) {
+      document.getElementById('endRua').value = d.logradouro || '';
+      document.getElementById('endBairro').value = d.bairro || '';
+      document.getElementById('endCidade').value = d.localidade || '';
+      document.getElementById('endEstado').value = d.uf || '';
+    }
+  } catch(e){}
+}
+
+async function salvarEndereco(e) {
+  e.preventDefault();
+  var msg = document.getElementById('endMsg');
+  try {
+    const res = await fetch('/api/user/addresses', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+      label: document.getElementById('endLabel').value,
+      cep: document.getElementById('endCep').value,
+      street: document.getElementById('endRua').value,
+      number: document.getElementById('endNumero').value,
+      complement: document.getElementById('endComplemento').value,
+      neighborhood: document.getElementById('endBairro').value,
+      city: document.getElementById('endCidade').value,
+      state: document.getElementById('endEstado').value,
+      is_default: document.getElementById('endPadrao').checked
+    })});
+    const data = await res.json();
+    if (data.success) {
+      msg.textContent = 'Endereço salvo!'; msg.className = 'conta-msg conta-msg-ok';
+      document.getElementById('addEnderecoForm').style.display = 'none';
+      carregarEnderecos();
+    } else { msg.textContent = data.error; msg.className = 'conta-msg conta-msg-err'; }
+  } catch(e) { msg.textContent = 'Erro ao salvar.'; msg.className = 'conta-msg conta-msg-err'; }
+}
+
+async function salvarDados(e) {
+  e.preventDefault();
+  var msg = document.getElementById('dadosMsg');
+  try {
+    const res = await fetch('/api/user/profile', { method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+      name: document.getElementById('dadosNome').value,
+      phone: document.getElementById('dadosTelefone').value,
+      birth_date: document.getElementById('dadosNascimento').value,
+      cpf: document.getElementById('dadosCpf').value,
+      rg: document.getElementById('dadosRg').value,
+      newsletter: document.getElementById('dadosNewsletter').checked,
+      marketing: document.getElementById('dadosMarketing').checked
+    })});
+    const data = await res.json();
+    if (data.success) {
+      msg.textContent = 'Dados salvos com sucesso!'; msg.className = 'conta-msg conta-msg-ok';
+      currentUser = data.user;
+      renderHeader(data.user);
+    } else { msg.textContent = data.error; msg.className = 'conta-msg conta-msg-err'; }
+  } catch(e) { msg.textContent = 'Erro ao salvar.'; msg.className = 'conta-msg conta-msg-err'; }
+}
+
+async function alterarSenha(e) {
+  e.preventDefault();
+  var msg = document.getElementById('senhaMsg');
+  var nova = document.getElementById('novaSenha').value;
+  var conf = document.getElementById('confirmarSenha').value;
+  if (nova !== conf) { msg.textContent = 'As senhas não conferem.'; msg.className = 'conta-msg conta-msg-err'; return; }
+  try {
+    const res = await fetch('/api/user/password', { method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+      currentPassword: document.getElementById('senhaAtual').value,
+      newPassword: nova
+    })});
+    const data = await res.json();
+    if (data.success) {
+      msg.textContent = 'Senha alterada com sucesso!'; msg.className = 'conta-msg conta-msg-ok';
+      e.target.reset();
+    } else { msg.textContent = data.error; msg.className = 'conta-msg conta-msg-err'; }
+  } catch(e) { msg.textContent = 'Erro.'; msg.className = 'conta-msg conta-msg-err'; }
+}
+
+async function sairConta(e) {
+  e.preventDefault();
+  await fetch('/api/auth/logout', { method: 'POST' });
+  window.location.href = '/';
+}
+
+function toggleUserMenu() {
+  document.getElementById('userDropdown').classList.toggle('open');
+}
+
+function navegarConta(secao) {
+  window.location.hash = secao;
+  mostrarSecao(secao, document.querySelector('[data-section="' + secao + '"]'));
+}
+
+function toggleMenu() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+function formatarCPF(input) {
+  var v = input.value.replace(/\D/g,'').slice(0,11);
+  if(v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4');
+  else if(v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d+)/,'$1.$2.$3');
+  else if(v.length > 3) v = v.replace(/(\d{3})(\d+)/,'$1.$2');
+  input.value = v;
+}
+
+function formatarTelefone(input) {
+  var v = input.value.replace(/\D/g,'').slice(0,11);
+  if(v.length > 6) v = v.replace(/(\d{2})(\d{5})(\d+)/,'($1) $2-$3');
+  else if(v.length > 2) v = v.replace(/(\d{2})(\d+)/,'($1) $2');
+  input.value = v;
+}
+
+function formatarCep(input) {
+  var v = input.value.replace(/\D/g,'').slice(0,8);
+  if(v.length > 5) v = v.slice(0,5) + '-' + v.slice(5);
+  input.value = v;
+}
+
+document.addEventListener('click', function(e) {
+  var logged = document.getElementById('userLogged');
+  if(logged && !logged.contains(e.target)) document.getElementById('userDropdown').classList.remove('open');
+});
+
+init();
+</script>
+</body>
+</html>

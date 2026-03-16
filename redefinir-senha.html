@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redefinir Senha | 011 dos Pods</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:var(--black);">
+
+<div class="auth-modal" style="position:relative;top:auto;left:auto;transform:none;display:block;opacity:1;max-width:420px;width:94%;margin:24px auto;">
+  <div class="auth-logo">011 DOS PODS</div>
+
+  <div id="viewForm">
+    <p class="auth-subtitle">Digite sua nova senha abaixo para concluir a redefinição.</p>
+    <form class="auth-form" onsubmit="redefinirSenha(event)">
+      <div class="auth-field">
+        <label>Nova Senha *</label>
+        <div class="auth-password-wrap">
+          <input type="password" id="novaSenha" placeholder="Mínimo 6 caracteres" autocomplete="new-password" minlength="6" required>
+          <button type="button" class="auth-eye" onclick="togglePwdView('novaSenha', this)">👁</button>
+        </div>
+      </div>
+      <div class="auth-field">
+        <label>Confirmar Nova Senha *</label>
+        <div class="auth-password-wrap">
+          <input type="password" id="confirmarSenha" placeholder="Repita a senha" autocomplete="new-password" minlength="6" required>
+          <button type="button" class="auth-eye" onclick="togglePwdView('confirmarSenha', this)">👁</button>
+        </div>
+      </div>
+      <div id="msg" class="conta-msg" style="margin:8px 0;"></div>
+      <button type="submit" class="auth-submit">Redefinir Senha</button>
+    </form>
+  </div>
+
+  <div id="viewSucesso" style="display:none;text-align:center;padding:20px 0;">
+    <div style="font-size:48px;margin-bottom:12px;">✅</div>
+    <h3 style="color:var(--white);margin-bottom:8px;">Senha redefinida!</h3>
+    <p style="color:#888;font-size:13px;margin-bottom:20px;">Sua senha foi alterada com sucesso. Faça login com a nova senha.</p>
+    <a href="/" class="auth-submit" style="display:block;text-align:center;text-decoration:none;">Ir para a Loja</a>
+  </div>
+
+  <div id="viewInvalido" style="display:none;text-align:center;padding:20px 0;">
+    <div style="font-size:48px;margin-bottom:12px;">❌</div>
+    <h3 style="color:var(--white);margin-bottom:8px;">Link inválido</h3>
+    <p style="color:#888;font-size:13px;margin-bottom:20px;">Este link de redefinição é inválido ou já expirou. Solicite um novo link.</p>
+    <a href="/" class="auth-submit" style="display:block;text-align:center;text-decoration:none;">Voltar à Loja</a>
+  </div>
+</div>
+
+<script>
+var token = new URLSearchParams(window.location.search).get('token');
+if (!token) { document.getElementById('viewForm').style.display='none'; document.getElementById('viewInvalido').style.display='block'; }
+
+async function redefinirSenha(e) {
+  e.preventDefault();
+  var nova = document.getElementById('novaSenha').value;
+  var conf = document.getElementById('confirmarSenha').value;
+  var msg = document.getElementById('msg');
+  if (nova !== conf) { msg.textContent = 'As senhas não conferem.'; msg.className = 'conta-msg conta-msg-err'; return; }
+  try {
+    const res = await fetch('/api/auth/reset-password', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ token, password: nova }) });
+    const data = await res.json();
+    if (data.success) { document.getElementById('viewForm').style.display='none'; document.getElementById('viewSucesso').style.display='block'; }
+    else { msg.textContent = data.error || 'Erro.'; msg.className = 'conta-msg conta-msg-err'; if(data.error && data.error.includes('inválido')) { document.getElementById('viewForm').style.display='none'; document.getElementById('viewInvalido').style.display='block'; } }
+  } catch(e) { msg.textContent = 'Erro de conexão.'; msg.className = 'conta-msg conta-msg-err'; }
+}
+
+function togglePwdView(id, btn) {
+  var input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+  btn.style.opacity = input.type === 'text' ? '1' : '0.5';
+}
+</script>
+</body>
+</html>
