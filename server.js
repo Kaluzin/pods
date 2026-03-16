@@ -12,16 +12,23 @@ const pgSession = require('connect-pg-simple')(session);
 const app = express();
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false });
 
+app.set('trust proxy', 1);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
+const isSecure = process.env.NODE_ENV === 'production';
 app.use(session({
   store: new pgSession({ pool, tableName: 'user_sessions', createTableIfMissing: true }),
   secret: process.env.SESSION_SECRET || 'pods011secret2025xk9',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false, maxAge: 7 * 24 * 60 * 60 * 1000 }
+  cookie: {
+    secure: false,
+    httpOnly: true,
+    sameSite: 'lax',
+    maxAge: 7 * 24 * 60 * 60 * 1000
+  }
 }));
 
 app.use(passport.initialize());
@@ -151,11 +158,22 @@ app.post('/api/auth/reset-password', async (req, res) => {
 });
 
 /* ===== GOOGLE OAUTH ===== */
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/?auth=error' }),
-  (req, res) => res.redirect('/?auth=success')
-);
+app.get('/auth/google', (req, res, next) => {
+  if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+    return res.redirect('/?google=not-configured');
+  }
+  passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
+});
+app.get('/auth/google/callback', (req, res, next) => {
+  if (!process.env.GOOGLE_CLIENT_ID) return res.redirect('/?auth=error');
+  passport.authenticate('google', { failureRedirect: '/?auth=error' }, (err, user) => {
+    if (err || !user) return res.redirect('/?auth=error');
+    req.login(user, (loginErr) => {
+      if (loginErr) return res.redirect('/?auth=error');
+      res.redirect('/?auth=success');
+    });
+  })(req, res, next);
+});
 
 /* ===== USER PROFILE ROUTES ===== */
 app.get('/api/user/profile', requireAuth, (req, res) => {

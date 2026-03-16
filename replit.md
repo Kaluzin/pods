@@ -50,12 +50,20 @@ Landing page de e-commerce brasileiro para pods/vapes com backend completo.
 - `GOOGLE_CLIENT_ID` — para login com Google
 - `GOOGLE_CLIENT_SECRET` — para login com Google
 
+## Imagens de produtos
+- Todas as imagens estão em `images/produtos/` (21 arquivos locais)
+- Referenciadas como `/images/produtos/NOME.ext` — sem dependência externa
+- Produtos Elfbar: ice-king-40k, nic-king-40k, sour-king-40k, bc10000, bc15k, gh23k, ew16000, ew9000, lm-mixer30k, etc.
+- Líquidos: elfbar-juice.jpg (usado para Nasty, BLVK, LQD, Zomo e Elfbar Juices)
+- Badges de confiança: banner-group1 a 4
+
 ## Funcionalidades
 - Modal de login/cadastro com abas (Entrar | Criar Conta)
 - Cadastro completo: CPF, RG, celular, telefone, data de nascimento, confirmação de e-mail e senha, checkboxes de newsletter/marketing
-- Login com Google OAuth (outros provedores: stub com instrução de configuração)
+- Login com Google OAuth (graceful redirect quando env vars ausentes — configura `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`)
 - Fluxo "esqueci minha senha" com link de redefinição exibido na tela
 - Checkout com abas de pagamento: PIX (5% desconto) e Cartão de Crédito
 - Frete calculado por CEP incluído no total do checkout
 - Página Minha Conta com: Pedidos, Meus Dados, Endereços, Favoritos, Créditos
 - Avatar com iniciais do usuário no header após login
+- `app.set('trust proxy', 1)` + `sameSite: lax` para funcionamento correto atrás do proxy Replit
