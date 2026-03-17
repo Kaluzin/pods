@@ -267,7 +267,7 @@ var currentUser = null;
 
 async function init() {
   try {
-    const res = await fetch('/api/auth/me');
+    const res = await fetch('/api/auth/me', { credentials: 'include' });
     const data = await res.json();
     if (!data.user) { window.location.href = '/?auth=login'; return; }
     currentUser = data.user;
@@ -317,7 +317,7 @@ function mostrarSecao(nome, btn) {
 async function carregarPedidos() {
   var el = document.getElementById('pedidosLista');
   try {
-    const res = await fetch('/api/user/orders');
+    const res = await fetch('/api/user/orders', { credentials: 'include' });
     const data = await res.json();
     if (!data.orders || data.orders.length === 0) {
       el.innerHTML = '<div class="conta-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><p>Você ainda não fez nenhum pedido em nossa loja.</p><a href="/" class="conta-btn-save" style="text-decoration:none;display:inline-block;text-align:center;margin-top:12px;">Ver Catálogo</a></div>';
@@ -335,7 +335,7 @@ async function carregarPedidos() {
 async function carregarFavoritos() {
   var el = document.getElementById('favoritosLista');
   try {
-    const res = await fetch('/api/user/favorites');
+    const res = await fetch('/api/user/favorites', { credentials: 'include' });
     const data = await res.json();
     if (!data.favorites || data.favorites.length === 0) {
       el.innerHTML = '<div class="conta-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><p>Você ainda não tem produtos favoritos.</p><a href="/" class="conta-btn-save" style="text-decoration:none;display:inline-block;text-align:center;margin-top:12px;">Ver Catálogo</a></div>';
@@ -349,7 +349,7 @@ async function carregarFavoritos() {
 
 async function removerFavorito(id, btn) {
   try {
-    await fetch('/api/user/favorites/' + id, { method: 'DELETE' });
+    await fetch('/api/user/favorites/' + id, { method: 'DELETE', credentials: 'include' });
     carregarFavoritos();
   } catch(e) {}
 }
@@ -357,7 +357,7 @@ async function removerFavorito(id, btn) {
 async function carregarEnderecos() {
   var el = document.getElementById('endLista');
   try {
-    const res = await fetch('/api/user/addresses');
+    const res = await fetch('/api/user/addresses', { credentials: 'include' });
     const data = await res.json();
     if (!data.addresses || data.addresses.length === 0) {
       el.innerHTML = '<div class="conta-empty"><p>Nenhum endereço cadastrado ainda.</p></div>';
@@ -375,7 +375,7 @@ async function carregarEnderecos() {
 
 async function removerEndereco(id) {
   if (!confirm('Remover este endereço?')) return;
-  await fetch('/api/user/addresses/' + id, { method: 'DELETE' });
+  await fetch('/api/user/addresses/' + id, { method: 'DELETE', credentials: 'include' });
   carregarEnderecos();
 }
 
@@ -403,7 +403,7 @@ async function salvarEndereco(e) {
   e.preventDefault();
   var msg = document.getElementById('endMsg');
   try {
-    const res = await fetch('/api/user/addresses', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+    const res = await fetch('/api/user/addresses', { method:'POST', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
       label: document.getElementById('endLabel').value,
       cep: document.getElementById('endCep').value,
       street: document.getElementById('endRua').value,
@@ -427,7 +427,7 @@ async function salvarDados(e) {
   e.preventDefault();
   var msg = document.getElementById('dadosMsg');
   try {
-    const res = await fetch('/api/user/profile', { method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+    const res = await fetch('/api/user/profile', { method:'PUT', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
       name: document.getElementById('dadosNome').value,
       phone: document.getElementById('dadosTelefone').value,
       birth_date: document.getElementById('dadosNascimento').value,
@@ -452,7 +452,7 @@ async function alterarSenha(e) {
   var conf = document.getElementById('confirmarSenha').value;
   if (nova !== conf) { msg.textContent = 'As senhas não conferem.'; msg.className = 'conta-msg conta-msg-err'; return; }
   try {
-    const res = await fetch('/api/user/password', { method:'PUT', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
+    const res = await fetch('/api/user/password', { method:'PUT', credentials:'include', headers:{'Content-Type':'application/json'}, body: JSON.stringify({
       currentPassword: document.getElementById('senhaAtual').value,
       newPassword: nova
     })});
@@ -466,7 +466,7 @@ async function alterarSenha(e) {
 
 async function sairConta(e) {
   e.preventDefault();
-  await fetch('/api/auth/logout', { method: 'POST' });
+  await fetch('/api/auth/logout', { method: 'POST', credentials: 'include' });
   window.location.href = '/';
 }
 

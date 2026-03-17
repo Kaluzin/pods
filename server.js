@@ -27,8 +27,10 @@ app.use(session({
     secure: false,
     httpOnly: true,
     sameSite: 'lax',
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  }
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    path: '/'
+  },
+  proxy: true
 }));
 
 app.use(passport.initialize());
@@ -100,7 +102,10 @@ app.post('/api/auth/register', async (req, res) => {
     const user = result.rows[0];
     req.login(user, (err) => {
       if (err) return res.status(500).json({ error: 'Erro ao fazer login.' });
-      res.json({ success: true, user: safeUser(user) });
+      req.session.save((saveErr) => {
+        if (saveErr) return res.status(500).json({ error: 'Erro ao salvar sessão.' });
+        res.json({ success: true, user: safeUser(user) });
+      });
     });
   } catch (e) { res.status(500).json({ error: 'Erro interno.' }); }
 });
@@ -111,7 +116,10 @@ app.post('/api/auth/login', (req, res, next) => {
     if (!user) return res.status(401).json({ error: info?.message || 'Credenciais inválidas.' });
     req.login(user, (err) => {
       if (err) return res.status(500).json({ error: 'Erro ao fazer login.' });
-      res.json({ success: true, user: safeUser(user) });
+      req.session.save((saveErr) => {
+        if (saveErr) return res.status(500).json({ error: 'Erro ao salvar sessão.' });
+        res.json({ success: true, user: safeUser(user) });
+      });
     });
   })(req, res, next);
 });
