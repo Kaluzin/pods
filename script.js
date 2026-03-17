@@ -276,12 +276,12 @@ function loginSocial(provedor) {
   if (provedor === 'google') {
     window.location.href = '/auth/google';
   } else {
-    var nomes = {microsoft:'Microsoft/Outlook', apple:'Apple/iCloud', facebook:'Facebook', yahoo:'Yahoo'};
-    var msg = document.createElement('div');
-    msg.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:14px 20px;border-radius:8px;z-index:9999;font-size:13px;max-width:360px;text-align:center;border:1px solid #444;';
-    msg.innerHTML = '<strong>' + (nomes[provedor]||provedor) + '</strong>: Para ativar este provedor, configure as variáveis <code>'+provedor.toUpperCase()+'_CLIENT_ID</code> e <code>'+provedor.toUpperCase()+'_CLIENT_SECRET</code> no servidor.';
-    document.body.appendChild(msg);
-    setTimeout(function() { msg.remove(); }, 5000);
+    var nomes = {microsoft:'Microsoft', apple:'Apple', facebook:'Facebook', yahoo:'Yahoo'};
+    var toast = document.createElement('div');
+    toast.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#1e1e1e;color:#fff;padding:14px 22px;border-radius:10px;z-index:9999;font-size:13px;max-width:340px;text-align:center;border:1px solid #333;box-shadow:0 6px 24px rgba(0,0,0,0.5);';
+    toast.innerHTML = 'Login com <strong>' + (nomes[provedor]||provedor) + '</strong> em breve.<br><span style="color:#aaa;font-size:12px;">Por enquanto, use e-mail ou Google.</span>';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.style.opacity='0'; toast.style.transition='opacity 0.3s'; setTimeout(function(){toast.remove();},350); }, 3000);
   }
 }
 
@@ -351,11 +351,12 @@ async function submitEsqueciSenha(e) {
     });
     var data = await res.json();
     if (data.success) {
-      msgEl.textContent = data.message;
+      msgEl.textContent = 'E-mail validado! Clique abaixo para redefinir sua senha.';
       msgEl.className = 'conta-msg conta-msg-ok';
-      linkEl.style.display = 'block';
-      linkEl.innerHTML = '<p style="font-size:12px;color:#888;margin-bottom:6px;">Copie e acesse o link abaixo:</p>' +
-        '<a href="' + data.resetLink + '" class="auth-reset-link-url" target="_blank">' + window.location.origin + data.resetLink + '</a>';
+      if (data.resetLink) {
+        linkEl.style.display = 'block';
+        linkEl.innerHTML = '<a href="' + data.resetLink + '" class="auth-submit" style="display:block;text-align:center;text-decoration:none;margin-top:8px;">Redefinir Senha</a>';
+      }
     } else {
       msgEl.textContent = data.error;
       msgEl.className = 'conta-msg conta-msg-err';
@@ -407,6 +408,17 @@ document.addEventListener('click', function(e) {
     if (params.get('auth') === 'login') {
       abrirAuth();
       history.replaceState({}, '', '/');
+    }
+    if (params.get('google') === 'not-configured') {
+      history.replaceState({}, '', '/');
+      setTimeout(function() {
+        abrirAuth();
+        var toast = document.createElement('div');
+        toast.style.cssText = 'position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#1e1e1e;color:#fff;padding:14px 22px;border-radius:10px;z-index:9999;font-size:13px;max-width:360px;text-align:center;border:1px solid #444;box-shadow:0 6px 24px rgba(0,0,0,0.5);';
+        toast.innerHTML = 'Login com Google indisponível no momento.<br><span style="color:#aaa;font-size:12px;">Use seu e-mail e senha para entrar.</span>';
+        document.body.appendChild(toast);
+        setTimeout(function() { toast.style.opacity='0'; toast.style.transition='opacity 0.3s'; setTimeout(function(){toast.remove();},350); }, 4000);
+      }, 200);
     }
   }).catch(function(){});
 })();

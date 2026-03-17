@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minha Conta | 011 dos Pods</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="conta.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -157,15 +157,24 @@
           <form class="conta-form conta-form-senha" onsubmit="alterarSenha(event)">
             <div class="conta-form-field">
               <label>Senha atual</label>
-              <input type="password" id="senhaAtual" autocomplete="current-password">
+              <div class="auth-password-wrap">
+                <input type="password" id="senhaAtual" autocomplete="current-password">
+                <button type="button" class="auth-eye" onclick="toggleContaSenha('senhaAtual', this)">👁</button>
+              </div>
             </div>
             <div class="conta-form-field">
               <label>Nova senha</label>
-              <input type="password" id="novaSenha" autocomplete="new-password" minlength="6">
+              <div class="auth-password-wrap">
+                <input type="password" id="novaSenha" autocomplete="new-password" minlength="6">
+                <button type="button" class="auth-eye" onclick="toggleContaSenha('novaSenha', this)">👁</button>
+              </div>
             </div>
             <div class="conta-form-field">
               <label>Confirmar nova senha</label>
-              <input type="password" id="confirmarSenha" autocomplete="new-password" minlength="6">
+              <div class="auth-password-wrap">
+                <input type="password" id="confirmarSenha" autocomplete="new-password" minlength="6">
+                <button type="button" class="auth-eye" onclick="toggleContaSenha('confirmarSenha', this)">👁</button>
+              </div>
             </div>
             <div id="senhaMsg" class="conta-msg"></div>
             <button type="submit" class="conta-btn-save">Alterar Senha</button>
@@ -264,6 +273,12 @@
 
 <script>
 var currentUser = null;
+
+function toggleContaSenha(id, btn) {
+  var input = document.getElementById(id);
+  input.type = input.type === 'password' ? 'text' : 'password';
+  btn.style.opacity = input.type === 'text' ? '1' : '0.5';
+}
 
 async function init() {
   try {

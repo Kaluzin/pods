@@ -16,7 +16,9 @@ Landing page de e-commerce brasileiro para pods/vapes com backend completo.
 | `server.js` | Servidor Express com todas as rotas de API e auth |
 | `index.html` | Landing page principal |
 | `script.js` | Lógica JS frontend (checkout, auth, frete, CEP) |
-| `style.css` | Todos os estilos |
+| `index.css` | CSS exclusivo da index.html (renomeado de style.css) |
+| `conta.css` | CSS exclusivo da minha-conta.html |
+| `redefinir.css` | CSS exclusivo da redefinir-senha.html |
 | `minha-conta.html` | Dashboard completo do cliente |
 | `redefinir-senha.html` | Página de redefinição de senha por token |
 
@@ -59,11 +61,16 @@ Landing page de e-commerce brasileiro para pods/vapes com backend completo.
 
 ## Funcionalidades
 - Modal de login/cadastro com abas (Entrar | Criar Conta)
+- 5 opções de login social: Google, Microsoft, Apple, Facebook, Yahoo (Microsoft/Apple/Facebook/Yahoo mostram toast "em breve" amigável)
+- Google OAuth graceful: se não configurado, mostra toast explicativo e abre modal de login
 - Cadastro completo: CPF, RG, celular, telefone, data de nascimento, confirmação de e-mail e senha, checkboxes de newsletter/marketing
-- Login com Google OAuth (graceful redirect quando env vars ausentes — configura `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`)
-- Fluxo "esqueci minha senha" com link de redefinição exibido na tela
+- Toggle mostrar/ocultar senha (👁) em todos os campos de senha (login, cadastro, redefinir, minha conta)
+- Fluxo "esqueci minha senha": após submeter email, aparece botão "Redefinir Senha" (sem exibir a URL bruta)
 - Checkout com abas de pagamento: PIX (5% desconto) e Cartão de Crédito
 - Frete calculado por CEP incluído no total do checkout
 - Página Minha Conta com: Pedidos, Meus Dados, Endereços, Favoritos, Créditos
 - Avatar com iniciais do usuário no header após login
+- Badge PIX com símbolo SVG gráfico (grafite), substituiu texto "PIX" verde
+- Ícones de trust badges com filtro grafite (filter: brightness(0) invert(0.55))
+- Seção "Avaliações" removida do index.html e de todos os links de navegação
 - `app.set('trust proxy', 1)` + `sameSite: lax` para funcionamento correto atrás do proxy Replit
